@@ -1,4 +1,4 @@
-# multivariate-measures
+# Source code for the paper Multivariate Similarity Measures for Time Series Classification
 
 Currently all the code for this paper is in the project for TS-CHIEF in branch called multivariate.
 
