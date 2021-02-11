@@ -1,6 +1,6 @@
 # Multivariate Similarity Measures for Time Series Classification
 
-Currently all the code for this paper is in the project for TS-CHIEF in branch called multivariate.
+Currently all the code for this paper is in the project for TS-CHIEF
 
 
 The main function for this paper is in the MultivarKNNApp class in package application.test.knn
