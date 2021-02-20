@@ -72,6 +72,8 @@ reproduce the results in this paper.
 The main function for this paper is in the ``MultivarKNNApp`` class in package 
 ``application.test.knn``
 
+Sorce code for the similarity measures are in the packahe ``distance.multivariate``
+
 ### Training
 Command line args are simple as they are implemented using JCommander in the class MultivarKNNArgs
 an example command line for training is
