@@ -72,7 +72,7 @@ reproduce the results in this paper.
 The main function for this paper is in the ``MultivarKNNApp`` class in package 
 ``application.test.knn``
 
-Sorce code for the similarity measures are in the packahe ``distance.multivariate``
+Sorce code for the multivariate similarity measures are in the package ``distance.multivariate``
 
 ### Training
 Command line args are simple as they are implemented using JCommander in the class MultivarKNNArgs
@@ -80,7 +80,7 @@ an example command line for training is
 
 ```
 java -Xmx32g -cp ""mEE-v1.0.jar:lib/*"
-application.papers.MultivariateEE -data=../data/ -a=Multivariate2018_ts 
+application.papers.MultivariateEE
 -seed=6463564 -threads=0 -fileOutput=overwrite 
 -exportTrainQueryFile=true -exportTestQueryFile=true 
 -saveTransformedDatasets=false 
@@ -90,9 +90,10 @@ application.papers.MultivariateEE -data=../data/ -a=Multivariate2018_ts
 -lpIndep=1 -lpDep=2 -norm=false 
 -o=out/i1d2-norm/train/ 
 -testDir=out/i1d2-norm/test/ 
+-data=E:/data/ -archive=Multivariate2018_ts 
 -params=range:0,100,1 
--m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe 
--d=BasicMotions
+-measures=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe 
+-datasets=BasicMotions,LSST,RocketTree
 ```
 
 I am using ``-cp`` flag for JVM and then providing main class name as ``"mEE-v1.0.jar:lib/*"

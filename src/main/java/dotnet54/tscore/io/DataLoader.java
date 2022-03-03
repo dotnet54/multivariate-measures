@@ -1,0 +1,248 @@
+package dotnet54.tscore.io;
+import com.kitfox.svg.A;
+import dotnet54.applications.tschief.TSChiefOptions;
+import dotnet54.tscore.Options;
+import dotnet54.tscore.data.Dataset;
+import dotnet54.tscore.data.LabelEncoder;
+import dotnet54.tscore.data.MTSDataset;
+import dotnet54.tscore.data.NonContinuousLabelEncoder;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class DataLoader {
+
+	/**
+	 * Main loader class for package dotnet54.tscore.io
+	 * 
+	 * DEV development plan for the package
+	 * 
+	 * detect file type {csv, arff} and call appropriate loaders
+	 * load predefined dataset names from UCR or other common archives, append/remove suffixes and prefixes to names as necessary
+	 * load univariate, multivariate
+	 * load fixed length/variable length datasets
+	 * add support for loggers, remove system prints, log stats for loading e.g. time, memory before and after
+	 * 
+	 */
+
+	private Options options;
+
+	public static Options noArchive = new Options()
+			.set("dataPath", "data/")
+			.set("archiveName", "")
+			.set("extension", ".csv")
+			.set("trainSuffix", "_TRAIN")
+			.set("testSuffix", "_TEST")
+			.set("csvFileHeader", false)
+			.set("csvTargetColumn", -1);
+
+	public static Options univariateUCR2015 = new Options()
+			.set("dataPath", "E:/data/")
+			.set("archiveName", "ucr2015")
+			.set("extension", ".csv")
+			.set("trainSuffix", "_TRAIN")
+			.set("testSuffix", "_TEST")
+			.set("csvFileHeader", false)
+			.set("csvTargetColumn", -1);
+
+	public static Options univariateUAE2018 = new Options()
+			.set("dataPath", "E:/data/")
+			.set("archiveName", "Univariate2018_ts")
+			.set("extension", ".ts")
+			.set("trainSuffix", "_TRAIN")
+			.set("testSuffix", "_TEST")
+			.set("csvFileHeader", false)
+			.set("csvTargetColumn", 0);
+
+	public static Options multivariateUAE2018 = new Options()
+			.set("dataPath", "E:/data/")
+			.set("archiveName", "Multivariate2018_ts")
+			.set("extension", ".ts")
+			.set("trainSuffix", "_TRAIN")
+			.set("testSuffix", "_TEST")
+			.set("csvFileHeader", false)
+			.set("csvTargetColumn", 0);
+
+	public DataLoader() {
+		this.options = univariateUAE2018;
+	}
+
+	public DataLoader(Options options) {
+		if (options == null){
+			this.options = univariateUAE2018;
+		}else{
+			this.options = options;
+		}
+	}
+
+	public MTSDataset[] loadTrainAndTestSet(String datasetName) {
+		MTSDataset[] datasets = new MTSDataset[2];
+
+		String trainingFileName =  options.getString("dataPath")  + options.getString("archiveName")
+				+ "/" + datasetName + "/" + datasetName
+				+ options.getString("trainSuffix") + options.getString("extension");
+		datasets[0] = loadMTSDataset(trainingFileName,
+					options.getBoolean("csvFileHeader"),
+					options.getInt("csvTargetColumn"),
+					null);;
+
+		String testFileName =  options.getString("dataPath")  + options.getString("archiveName")
+				+ "/" + datasetName + "/" + datasetName
+				+ options.getString("testSuffix") + options.getString("extension");
+		datasets[1] = loadMTSDataset(testFileName,
+				options.getBoolean("csvFileHeader"),
+				options.getInt("csvTargetColumn"),
+				datasets[0].getLabelEncoder());;
+		return datasets;
+	}
+
+
+	public MTSDataset loadTrainingSet(String trainingFileName) {
+		return loadMTSDataset(trainingFileName,
+		options.getBoolean("csvFileHeader"),
+		options.getInt("csvTargetColumn"),
+		null);
+	}
+
+	public MTSDataset loadTestingSet(String testingFileName, Dataset trainData) {
+		return loadMTSDataset(testingFileName,
+		options.getBoolean("csvFileHeader"),
+		options.getInt("csvTargetColumn"),
+				trainData.getLabelEncoder());
+	}
+
+	public MTSDataset loadMTSDataset(String fileName, boolean hasHeader, int labelColumn,
+											 LabelEncoder labelEncoder) {
+		MTSDataset data = null;
+		if (labelEncoder == null){
+			labelEncoder = new NonContinuousLabelEncoder();
+		}
+
+		if (fileName.endsWith(".arff")) {
+			ArffReader reader = new ArffReader(hasHeader, labelColumn);
+			data = reader.readFile(fileName.trim(), labelEncoder);
+		}else if(fileName.endsWith(".ts")){
+			TSReader reader = new TSReader(hasHeader, labelColumn);
+			data = reader.readFile(fileName.trim(), labelEncoder);
+		}else {
+			//assume its a csv file
+			CsvReader reader = new CsvReader(hasHeader, labelColumn);
+			data = reader.readFile(fileName.trim(), labelEncoder);
+		}
+
+		return data;
+	}
+
+	public static double[][] loadToArray(String fileName, boolean hasHeader) {
+		double[][] data = null;
+		
+		CsvToDoubleArrayReader reader = new CsvToDoubleArrayReader(hasHeader);
+		data = reader.readFileToArray(fileName);
+		
+		return data;
+	}
+
+
+	/**
+	 *  Resamples UCR/UEA datasets using indices loaded from a text file.
+	 *  Indices for 30 resamples are generated using a python script and saved to disk for reproducibility
+	 *  Each row of these files contains the indices present in the sample,
+	 *  indices are generated by combining train and test files
+	 *  First row contains all -1 to represent the default train/test split on www.timeseriesclassification.com
+	 *  Indices were generated by Angus Dempster to be similar to the output from tsml Java project
+	 *
+	 */
+	public static Dataset[] resampleUsingIndicesFile(Dataset train, Dataset test, int foldNumber,
+			String archiveName, String datasetName){
+
+		int[] trainIndices = loadIndicesFromFile(
+			"cache/" + archiveName + "_INDICES/" + datasetName + "_INDICES_TRAIN.txt",
+			train.size(), foldNumber);
+		int[]  testIndices = loadIndicesFromFile(
+				"cache/" + archiveName + "_INDICES/" + datasetName + "_INDICES_TEST.txt",
+				train.size(), foldNumber);
+
+		Dataset[] datasets = new Dataset[2];
+
+		datasets[0] = resampleUsingIndices(train, test, trainIndices);
+		datasets[1] = resampleUsingIndices(train, test, testIndices);
+
+
+		return datasets;
+	}
+
+	public static int[] loadIndicesFromFile(String indicesFileName, int size, int foldNumber){
+		int[] indices = null;
+
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(new File(indicesFileName)));
+			String line;
+			int rowNumber = 0;
+			while ((line = br.readLine()) != null) {
+				if (rowNumber == foldNumber){
+					indices = Arrays.stream(line.split(" ")).mapToInt(Integer::parseInt).toArray();
+					break;
+				}
+				rowNumber++;
+			}
+		} catch (Exception e) {
+			System.out.println("An error occurred while reading the indices file: " + indicesFileName);
+			e.printStackTrace();
+		}
+
+		return indices;
+	}
+
+	public static Dataset resampleUsingIndices(Dataset train, Dataset test, int[] indices){
+		int trainSize = train.size();
+		MTSDataset resampledDataset = new MTSDataset((MTSDataset) train, false, indices.length);
+
+		// These indices are formed by vertically stacking train and test set
+		// So when using the indices on the test set we have to adjust using the trainSize
+
+		for (int index : indices) {
+			if (index == -1) {
+				throw new RuntimeException("Index value not supported");
+			} else if (index < trainSize) {
+				resampledDataset.add(train.getSeries(index));
+			} else {
+				resampledDataset.add(test.getSeries(index - trainSize));
+			}
+		}
+
+		return resampledDataset;
+	}
+
+
+	public static void main(String[] args) {
+
+		DataLoader loader = new DataLoader(DataLoader.multivariateUAE2018);
+		MTSDataset csv = loader.loadTrainingSet("E://ucr/Beef/Beef_TRAIN.txt");
+		System.out.println(csv);
+
+		MTSDataset csvHeader = loader.loadMTSDataset("E://ucr/Beef/Beef_TRAIN.txt", true, 0, null); //should skip top row
+		System.out.println(csvHeader);
+
+		MTSDataset arff = loader.loadMTSDataset("E://ucr/Beef/Beef_TRAIN.arff", false, -1, null);
+		System.out.println(arff);
+
+		MTSDataset sits = loader.loadMTSDataset("E:\\\\SatelliteFull\\sk_stratified\\SatelliteFull_TRAIN_c59.arff", false, -1, null);
+		System.out.println(sits);
+
+		MTSDataset sits2 = loader.loadMTSDataset("E:\\\\SatelliteFull\\sk_stratified\\SatelliteFull_TRAIN_c59.arff", false, -1, null);
+		System.out.println(sits2);
+		
+//		System.out.println("ucr");
+//		MTSDataset[] ucr = DataLoader.loadMTSDataset("Beef");
+//		System.out.println(ucr[0]);
+		
+		System.out.println("transformed");
+		double[][] data = loader.loadToArray("cache/inception/Beef/x_train_vec.csv", false);
+		System.out.println(data[29][639]);
+		
+	}
+	
+}

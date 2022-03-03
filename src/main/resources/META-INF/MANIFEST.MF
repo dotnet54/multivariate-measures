@@ -1,0 +1,127 @@
+Manifest-Version: 1.0
+Main-Class: dotnet54.applications.tschief.TSChiefApp
+Class-Path: native_ref-java-1.1.jar nd4j-native-1.0.0-beta7-android-arm.
+ jar javacpp-1.5.3-linux-arm64.jar viz.js-graphviz-java-2.1.3.jar tables
+ aw-core-0.38.2.jar openblas-0.3.9-1-1.5.3-android-x86_64.jar guava-1.0.
+ 0-beta7.jar commons-net-3.1.jar openblas-0.3.9-1-1.5.3-android-arm.jar 
+ error_prone_annotations-2.3.4.jar netlib-native_system-win-i686-1.1-nat
+ ives.jar logback-core-1.2.3.jar protobuf-1.0.0-beta7.jar javacpp-1.5.3-
+ macosx-x86_64.jar shims-0.8.12.jar netlib-native_ref-linux-armhf-1.1-na
+ tives.jar java-cup-runtime-11b-20160615.jar commons-cli-1.4.jar jackson
+ -databind-2.9.3.jar netlib-native_system-linux-x86_64-1.1-natives.jar j
+ akarta.activation-api-1.2.2.jar openblas-0.3.9-1-1.5.3-macosx-x86_64.ja
+ r trove4j-3.0.3.jar nd4j-api-1.0.0-beta7.jar openblas-0.3.9-1-1.5.3-ios
+ -arm64.jar guava-28.2-jre.jar jsr305-3.0.2.jar univocity-parsers-2.8.4.
+ jar nd4j-native-1.0.0-beta7-linux-ppc64le.jar jclipboardhelper-0.1.0.ja
+ r nd4j-native-1.0.0-beta7-android-x86_64.jar javacpp-1.5.3-android-x86_
+ 64.jar j2v8_win32_x86_64-4.6.0.jar svgSalamander-1.1.3.jar netlib-nativ
+ e_ref-osx-x86_64-1.1-natives.jar javacpp-1.5.3-linux-x86.jar netlib-nat
+ ive_system-linux-i686-1.1-natives.jar nd4j-native-1.0.0-beta7-android-a
+ rm64.jar javacpp-1.5.3-ios-x86_64.jar jcl-over-slf4j-1.7.30.jar checker
+ -qual-2.10.0.jar listenablefuture-9999.0-empty-to-avoid-conflict-with-g
+ uava.jar mkl-2020.1-1.5.3.jar jakarta.activation-1.2.2.jar hppc-0.8.2.j
+ ar javacpp-1.5.3.jar graphviz-java-0.18.1.jar jcommander-1.81.jar openb
+ las-0.3.9-1-1.5.3-ios-x86_64.jar javacpp-1.5.3-android-arm.jar openblas
+ -0.3.9-1-1.5.3-windows-x86.jar slf4j-api-1.7.30.jar txw2-2.3.3.jar poi-
+ 4.1.2.jar javacpp-1.5.3-android-x86.jar jackson-1.0.0-beta7.jar failure
+ access-1.0.1.jar JTransforms-3.1.jar jniloader-1.1.jar nd4j-native-1.0.
+ 0-beta7-android-x86.jar bounce-0.18.jar mkl-2020.1-1.5.3-windows-x86_64
+ .jar mkl-platform-2020.1-1.5.3.jar java-cup-11b-20160615.jar javacpp-1.
+ 5.3-linux-x86_64.jar nd4j-native-api-1.0.0-beta7.jar netlib-native_ref-
+ linux-x86_64-1.1-natives.jar nd4j-native-1.0.0-beta7-linux-armhf.jar ts
+ ml11_3_2020.jar mkl-2020.1-1.5.3-linux-x86.jar minlog-1.3.1.jar icu4j-6
+ 5.1.jar javacpp-1.5.3-ios-arm64.jar reflectasm-1.11.9.jar jackson-annot
+ ations-2.9.0.jar javacpp-1.5.3-android-arm64.jar javacpp-1.5.3-linux-ar
+ mhf.jar javacpp-1.5.3-windows-x86.jar commons-compress-1.20.jar openbla
+ s-0.3.9-1-1.5.3-linux-x86.jar jfilechooser-bookmarks-0.1.6.jar flatbuff
+ ers-java-1.10.0.jar netlib-native_ref-linux-i686-1.1-natives.jar kryo-5
+ .0.4.jar metrics-annotation-4.0.3.jar mkl-2020.1-1.5.3-linux-x86_64.jar
+  SparseBitSet-1.2.jar core-1.1.jar classgraph-4.8.60.jar javacpp-1.5.3-
+ windows-x86_64.jar commons-csv-1.8.jar jakarta.xml.bind-api-2.3.3.jar n
+ ashorn-promise-0.1.1.jar native_system-java-1.1.jar byteunits-0.9.1.jar
+  openblas-platform-0.3.9-1-1.5.3.jar mtj-1.0.4.jar openblas-0.3.9-1-1.5
+ .3-android-arm64.jar nd4j-common-1.0.0-beta7.jar nd4j-native-1.0.0-beta
+ 7.jar nd4j-native-1.0.0-beta7-windows-x86_64.jar javacpp-1.5.3-linux-pp
+ c64le.jar openblas-0.3.9-1-1.5.3-linux-ppc64le.jar jna-4.3.0.jar openbl
+ as-0.3.9-1-1.5.3-linux-armhf.jar oshi-core-3.4.2.jar openblas-0.3.9-1-1
+ .5.3-linux-arm64.jar threetenbp-1.3.3.jar openblas-0.3.9-1-1.5.3-linux-
+ x86_64.jar RoaringBitmap-0.8.12.jar neoitertools-1.0.0.jar fastutil-8.5
+ .2.jar istack-commons-runtime-3.0.11.jar openblas-0.3.9-1-1.5.3-android
+ -x86.jar mkl-2020.1-1.5.3-windows-x86.jar javacpp-platform-1.5.3.jar co
+ mmons-io-2.8.0.jar jackson-core-2.9.3.jar mkl-2020.1-1.5.3-macosx-x86_6
+ 4.jar weka-dev-3.9.5.jar openblas-0.3.9-1-1.5.3.jar nd4j-native-1.0.0-b
+ eta7-macosx-x86_64.jar netlib-native_ref-win-x86_64-1.1-natives.jar jax
+ b-runtime-2.3.3.jar openblas-0.3.9-1-1.5.3-windows-x86_64.jar commons-c
+ odec-1.13.jar netlib-native_system-linux-armhf-1.1-natives.jar nd4j-nat
+ ive-platform-1.0.0-beta7.jar commons-collections4-4.4.jar netlib-native
+ _ref-win-i686-1.1-natives.jar commons-lang3-3.12.0.jar super-csv-2.4.0.
+ jar netlib-java-1.1.jar arpack_combined_all-0.1.jar jul-to-slf4j-1.7.30
+ .jar commons-math3-3.6.1.jar joinery-dataframe-1.9.jar commons-exec-1.3
+ .jar core-1.1.jar jna-4.3.0.jar mtj-1.0.4.jar poi-4.1.2.jar gson-2.8.6.
+ jar hppc-0.8.2.jar icu4j-65.1.jar kryo-5.0.4.jar txw2-2.3.3.jar bounce-
+ 0.18.jar jsr305-3.0.2.jar minlog-1.3.1.jar shims-0.8.12.jar javacpp-1.5
+ .3.jar jniloader-1.1.jar objenesis-3.1.jar trove4j-3.0.3.jar tsml11_3_2
+ 020.jar fastutil-8.5.2.jar guava-28.2-jre.jar tsml-0.0.1-DEV.jar weka-d
+ ev-3.9.5.jar byteunits-0.9.1.jar commons-cli-1.4.jar commons-csv-1.8.ja
+ r commons-net-3.1.jar jcommander-1.81.jar JTransforms-3.1.jar netlib-ja
+ va-1.1.jar oshi-core-3.4.2.jar super-csv-2.4.0.jar commons-exec-1.3.jar
+  commons-io-2.8.0.jar hamcrest-all-1.3.jar JLargeArrays-1.5.jar mkl-202
+ 0.1-1.5.3.jar opentest4j-1.2.0.jar slf4j-api-1.7.30.jar SparseBitSet-1.
+ 2.jar threetenbp-1.3.3.jar classgraph-4.8.60.jar guava-1.0.0-beta7.jar 
+ reflectasm-1.11.9.jar commons-codec-1.13.jar jackson-core-2.9.3.jar jax
+ b-runtime-2.3.3.jar jna-platform-4.3.0.jar logback-core-1.2.3.jar neoit
+ ertools-1.0.0.jar checker-qual-2.10.0.jar commons-math3-3.6.1.jar failu
+ reaccess-1.0.1.jar jackson-1.0.0-beta7.jar jul-to-slf4j-1.7.30.jar nati
+ ve_ref-java-1.1.jar slf4j-simple-1.7.30.jar svgSalamander-1.1.3.jar com
+ mons-lang3-3.12.0.jar graphviz-java-0.18.1.jar nd4j-api-1.0.0-beta7.jar
+  protobuf-1.0.0-beta7.jar RoaringBitmap-0.8.12.jar tablesaw-core-0.38.2
+ .jar apiguardian-api-1.1.0.jar commons-compress-1.20.jar java-cup-11b-2
+ 0160615.jar jcl-over-slf4j-1.7.30.jar joinery-dataframe-1.9.jar logback
+ -classic-1.2.3.jar nashorn-promise-0.1.1.jar j2objc-annotations-1.3.jar
+  jackson-databind-2.9.3.jar javacpp-platform-1.5.3.jar jclipboardhelper
+ -0.1.0.jar native_system-java-1.1.jar openblas-0.3.9-1-1.5.3.jar arpack
+ _combined_all-0.1.jar flatbuffers-java-1.10.0.jar j2v8_win32_x86_64-4.6
+ .0.jar javacpp-1.5.3-ios-arm64.jar javacpp-1.5.3-linux-x86.jar junit-ju
+ piter-api-5.7.1.jar nd4j-common-1.0.0-beta7.jar nd4j-native-1.0.0-beta7
+ .jar univocity-parsers-2.8.4.jar commons-collections4-4.4.jar jakarta.a
+ ctivation-1.2.2.jar javacpp-1.5.3-ios-x86_64.jar metrics-annotation-4.0
+ .3.jar jackson-annotations-2.9.0.jar javacpp-1.5.3-android-arm.jar java
+ cpp-1.5.3-android-x86.jar javacpp-1.5.3-linux-arm64.jar javacpp-1.5.3-l
+ inux-armhf.jar javacpp-1.5.3-windows-x86.jar mkl-platform-2020.1-1.5.3.
+ jar jakarta.xml.bind-api-2.3.3.jar javacpp-1.5.3-linux-x86_64.jar mkl-2
+ 020.1-1.5.3-linux-x86.jar viz.js-graphviz-java-2.1.3.jar javacpp-1.5.3-
+ android-arm64.jar javacpp-1.5.3-linux-ppc64le.jar javacpp-1.5.3-macosx-
+ x86_64.jar nd4j-native-api-1.0.0-beta7.jar jakarta.activation-api-1.2.2
+ .jar javacpp-1.5.3-android-x86_64.jar javacpp-1.5.3-windows-x86_64.jar 
+ jfilechooser-bookmarks-0.1.6.jar junit-platform-commons-1.7.1.jar mkl-2
+ 020.1-1.5.3-windows-x86.jar error_prone_annotations-2.3.4.jar istack-co
+ mmons-runtime-3.0.11.jar java-cup-runtime-11b-20160615.jar mkl-2020.1-1
+ .5.3-linux-x86_64.jar mkl-2020.1-1.5.3-macosx-x86_64.jar mkl-2020.1-1.5
+ .3-windows-x86_64.jar openblas-platform-0.3.9-1-1.5.3.jar nd4j-native-p
+ latform-1.0.0-beta7.jar openblas-0.3.9-1-1.5.3-ios-arm64.jar openblas-0
+ .3.9-1-1.5.3-linux-x86.jar openblas-0.3.9-1-1.5.3-ios-x86_64.jar openbl
+ as-0.3.9-1-1.5.3-android-arm.jar openblas-0.3.9-1-1.5.3-android-x86.jar
+  openblas-0.3.9-1-1.5.3-linux-arm64.jar openblas-0.3.9-1-1.5.3-linux-ar
+ mhf.jar openblas-0.3.9-1-1.5.3-windows-x86.jar nd4j-native-1.0.0-beta7-
+ android-arm.jar nd4j-native-1.0.0-beta7-android-x86.jar nd4j-native-1.0
+ .0-beta7-linux-armhf.jar openblas-0.3.9-1-1.5.3-linux-x86_64.jar nd4j-n
+ ative-1.0.0-beta7-linux-x86_64.jar openblas-0.3.9-1-1.5.3-android-arm64
+ .jar openblas-0.3.9-1-1.5.3-linux-ppc64le.jar openblas-0.3.9-1-1.5.3-ma
+ cosx-x86_64.jar nd4j-native-1.0.0-beta7-android-arm64.jar nd4j-native-1
+ .0.0-beta7-linux-ppc64le.jar nd4j-native-1.0.0-beta7-macosx-x86_64.jar 
+ openblas-0.3.9-1-1.5.3-android-x86_64.jar openblas-0.3.9-1-1.5.3-window
+ s-x86_64.jar nd4j-native-1.0.0-beta7-android-x86_64.jar nd4j-native-1.0
+ .0-beta7-windows-x86_64.jar netlib-native_ref-win-i686-1.1-natives.jar 
+ netlib-native_ref-linux-i686-1.1-natives.jar netlib-native_ref-osx-x86_
+ 64-1.1-natives.jar netlib-native_ref-win-x86_64-1.1-natives.jar netlib-
+ native_ref-linux-armhf-1.1-natives.jar netlib-native_system-win-i686-1.
+ 1-natives.jar netlib-native_ref-linux-x86_64-1.1-natives.jar netlib-nat
+ ive_system-linux-i686-1.1-natives.jar netlib-native_system-osx-x86_64-1
+ .1-natives.jar netlib-native_system-win-x86_64-1.1-natives.jar netlib-n
+ ative_system-linux-armhf-1.1-natives.jar netlib-native_system-linux-x86
+ _64-1.1-natives.jar listenablefuture-9999.0-empty-to-avoid-conflict-wit
+ h-guava.jar JLargeArrays-1.5.jar netlib-native_system-osx-x86_64-1.1-na
+ tives.jar j2objc-annotations-1.3.jar netlib-native_system-win-x86_64-1.
+ 1-natives.jar nd4j-native-1.0.0-beta7-linux-x86_64.jar jna-platform-4.3
+ .0.jar gson-2.8.6.jar
+
