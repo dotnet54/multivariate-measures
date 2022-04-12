@@ -1,0 +1,323 @@
+
+module load python/3.8.5
+
+# 23-7-2020
+# python launcher.py -j=a0 -o=a0 -m=euc:dtwf:dtwr:ddtwf:ddtwr:wdtw:wddtw:lcss:msm:erp:twe -d=BasicMotions,ERing:RacketSports:LSST:Libras:FingerMovements:NATOPS:FaceDetection:ArticularyWordRecognition:Handwriting:Epilepsy:PhonemeSpectra:UWaveGestureLibrary:HandMovementDirection:Heartbeat:AtrialFibrillation:SelfRegulationSCP1:SelfRegulationSCP2:Cricket:EthanolConcentration:StandWalkJump:PEMS-SF:DuckDuckGeese:MotorImagery
+# python launcher.py -j=a0 -o=a0 -p=5:0,100,1 -m=euc:dtwf:dtwr:ddtwf:ddtwr:wdtw:wddtw:lcss:msm:erp:twe -d=BasicMotions,ERing:RacketSports:LSST:Libras:FingerMovements:NATOPS:FaceDetection:ArticularyWordRecognition:Handwriting:Epilepsy:PhonemeSpectra:UWaveGestureLibrary:HandMovementDirection:Heartbeat:AtrialFibrillation:SelfRegulationSCP1:SelfRegulationSCP2:Cricket:EthanolConcentration:StandWalkJump:PEMS-SF:DuckDuckGeese:MotorImagery
+# python launcher.py -j=a0 -mem=500 -time=0:30:00 -o=a0 -p=50:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw:wddtw:lcss:msm:erp:twe -d=BasicMotions,ERing
+# python launcher.py -j=a0 -mem=1000 -time=20:00:00 -o=a0 -p=20:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw:wddtw:lcss:msm:erp:twe -d=RacketSports:LSST:Libras:FingerMovements:NATOPS:FaceDetection:ArticularyWordRecognition:Handwriting:Epilepsy:PhonemeSpectra:UWaveGestureLibrary:HandMovementDirection:Heartbeat
+# python launcher.py -j=a0 -mem=1200 -time=1-0:00:00 -o=a0 -p=10:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw:wddtw:lcss:msm:erp:twe -d=AtrialFibrillation:SelfRegulationSCP1:SelfRegulationSCP2:Cricket:EthanolConcentration
+# python launcher.py -j=a0 -mem=1500 -time=2-0:00:00 -o=a0 -p=5:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw:wddtw:lcss:msm:erp:twe -d=StandWalkJump:PEMS-SF:DuckDuckGeese:MotorImagery
+
+
+25-7-2020
+# screen -L java -Xmx64g -cp "KNN_LOOCV_v002.jar:lib/*" application.test.knn.KnnLOOCV -data=../data/ -a=Multivariate2018_ts -norm -seed=6463564 -t=0 -it=0 -tf=yyyyMMdd- -o=out/n1-cpu32/ -of=n1-cpu32-r0.csv -exportQuery=true -loocv -dep=false,true -dims=AllDims -params=range:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,msm,erp,twe -d=BasicMotions,ERing,RacketSports,LSST,Libras,FingerMovements,NATOPS,ArticularyWordRecognition
+# screen -L java -Xmx64g -cp "KNN_LOOCV_v002.jar:lib/*" application.test.knn.KnnLOOCV -data=../data/ -a=Multivariate2018_ts -norm -seed=6463564 -t=0 -it=0 -tf=yyyyMMdd- -o=out/n2-cpu32/ -of=n2-cpu32-r0.csv -exportQuery=true -loocv -dep=false,true -dims=AllDims -params=range:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,msm,erp,twe -d=Handwriting,Epilepsy,UWaveGestureLibrary,HandMovementDirection,Heartbeat,AtrialFibrillation,SelfRegulationSCP1,SelfRegulationSCP2,Cricket,EthanolConcentration,StandWalkJump,PenDigits
+# screen -L java -Xmx64g -cp "KNN_LOOCV_v002.jar:lib/*" application.test.knn.KnnLOOCV -data=../data/ -a=Multivariate2018_ts -norm -seed=6463564 -t=0 -it=0 -tf=yyyyMMdd- -o=out/n1-cpu32/ -of=n1-cpu32-r0.csv -exportQuery=true -loocv -dep=false,true -dims=AllDims -params=range:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,msm,erp,twe -d=PEMS-SF,DuckDuckGeese,MotorImagery
+# screen -L java -Xmx64g -cp "KNN_LOOCV_v002.jar:lib/*" application.test.knn.KnnLOOCV -data=../data/ -a=Multivariate2018_ts -norm -seed=6463564 -t=0 -it=0 -tf=yyyyMMdd- -o=out/n3-cpu32/ -of=n3-cpu32-r0.csv -exportQuery=true -loocv -dep=false,true -dims=AllDims -params=range:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,msm,erp,twe -d=DuckDuckGeese,MotorImagery
+#
+# ------------------------------------------------  12-8-2020
+# m3 test BasicMotions
+# python launcher.py -j=BW -mem=200 -time=1:00:00 -o=m3-1208a -p=50:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw:lcss,erp,twe:msm -d=BasicMotions
+
+# m3 FaceDetection - 5 * 10 jobs
+# python launcher.py -j=FD -mem=1000 -time=20:00:00 -o=m3-1208a -p=10:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw,wddtw:lcss,erp,twe -d=FaceDetection
+# python launcher.py -j=FDm -mem=1000 -time=20:00:00 -o=m3-1208a -p=10:0,100,1 -m=msm -d=FaceDetection
+
+# pending
+# m3 MotorImagery
+# python launcher.py -j=MI -mem=800 -time=20:00:00 -o=m3-1208a -p=10:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw,wddtw:lcss,erp,twe -d=MotorImagery
+# python launcher.py -j=MIm -mem=800 -time=20:00:00 -o=m3-1208a -p=10:0,100,1 -m=msm -d=MotorImagery
+
+# m3 PEMS-SF
+# python launcher.py -j=PS -mem=500 -time=20:00:00 -o=m3-1208a -p=10:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw,wddtw:lcss,erp,twe -d=PEMS-SF
+# python launcher.py -j=PSm -mem=500 -time=20:00:00 -o=m3-1208a -p=10:0,100,1 -m=msm -d=PEMS-SF
+
+# m3 PhonemeSpectra
+# python launcher.py -j=PH -mem=400 -time=10:00:00 -o=m3-1208a -p=10:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw,wddtw:lcss,erp,twe -d=PhonemeSpectra
+# python launcher.py -j=PHm -mem=400 -time=10:00:00 -o=m3-1208a -p=10:0,100,1 -m=msm -d=PhonemeSpectra
+
+# ------------------------------------------------  12-8-2020
+# nc1 - no msm
+# screen -L -Logfile nc1_32cpu_1208_batch1_no_msm.slog java -Xmx64g -cp "mKNN_v1208.jar:lib/*" application.test.knn.MultivarKNNApp -data=../data/ -a=Multivariate2018_ts -norm -seed=6463564 -t=0 -vb=1 -tf=yyyy-MM-dd-HHmmSS -o=out/nc1_32cpu_1208/ -sf=n1-cpu32-r0.csv  -exportTrainQueryFile=true -exportTestQueryFile=true -runTesting=false -testParamFileSuffix=-train-d -generateBestParamFile=false -python=venv/Scripts/python -runLOOCV=true -dep=false,true -dims=AllDims -lpIndep=2 -lpDep=2 -adjustSquaredDiff=true -useSquaredDiff=true -params=range:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,twe -d=ERing,BasicMotions,Libras,RacketSports,AtrialFibrillation,NATOPS,Handwriting,Epilepsy,UWaveGestureLibrary,FingerMovements,ArticularyWordRecognition
+
+# screen -L -Logfile nc1_32cpu_1208_batch1_msm.slog java -Xmx64g -cp "mKNN_v1208.jar:lib/*" application.test.knn.MultivarKNNApp -data=../data/ -a=Multivariate2018_ts -norm -seed=6463564 -t=0 -vb=1 -tf=yyyy-MM-dd-HHmmSS -o=out/nc1_32cpu_1208/ -sf=n1-cpu32-r0.csv  -exportTrainQueryFile=true -exportTestQueryFile=true -runTesting=false -testParamFileSuffix=-train-d -generateBestParamFile=false -python=venv/Scripts/python -runLOOCV=true -dep=false,true -dims=AllDims -lpIndep=2 -lpDep=2 -adjustSquaredDiff=true -useSquaredDiff=true -params=range:0,100,1 -m=msm -d=ERing,BasicMotions,Libras,RacketSports,AtrialFibrillation,NATOPS,Handwriting,Epilepsy,UWaveGestureLibrary,FingerMovements,ArticularyWordRecognition
+
+# screen -L -Logfile nc1_32cpu_1208_batch3a_no_msm.slog java -Xmx64g -cp "mKNN_v1208.jar:lib/*" application.test.knn.MultivarKNNApp -data=../data/ -a=Multivariate2018_ts -norm -seed=6463564 -t=0 -vb=1 -tf=yyyy-MM-dd-HHmmSS -o=out/nc1_32cpu_1208/ -sf=n1-cpu32-r0.csv  -exportTrainQueryFile=true -exportTestQueryFile=true -runTesting=false -testParamFileSuffix=-train-d -generateBestParamFile=false -python=venv/Scripts/python -runLOOCV=true -dep=false,true -dims=AllDims -lpIndep=2 -lpDep=2 -adjustSquaredDiff=true -useSquaredDiff=true -params=range:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,twe -d=Heartbeat,DuckDuckGeese,PenDigits
+
+# screen -L -Logfile nc1_32cpu_1208_batch3a_msm.slog java -Xmx64g -cp "mKNN_v1208.jar:lib/*" application.test.knn.MultivarKNNApp -data=../data/ -a=Multivariate2018_ts -norm -seed=6463564 -t=0 -vb=1 -tf=yyyy-MM-dd-HHmmSS -o=out/nc1_32cpu_1208/ -sf=n1-cpu32-r0.csv  -exportTrainQueryFile=true -exportTestQueryFile=true -runTesting=false -testParamFileSuffix=-train-d -generateBestParamFile=false -python=venv/Scripts/python -runLOOCV=true -dep=false,true -dims=AllDims -lpIndep=2 -lpDep=2 -adjustSquaredDiff=true -useSquaredDiff=true -params=range:0,100,1 -m=msm -d=Heartbeat,DuckDuckGeese,PenDigits
+
+# ------------------------------------------------  12-8-2020
+# nc2 - no msm
+# screen -L -Logfile nc2_32cpu_1208_batch2_no_msm.slog java -Xmx64g -cp "mKNN_v1208.jar:lib/*" application.test.knn.MultivarKNNApp -data=../data/ -a=Multivariate2018_ts -norm -seed=6463564 -t=0 -vb=1 -tf=yyyy-MM-dd-HHmmSS -o=out/nc2_32cpu_1208/ -sf=n2-cpu32-r0.csv  -exportTrainQueryFile=true -exportTestQueryFile=true -runTesting=false -testParamFileSuffix=-train-d -generateBestParamFile=false -python=venv/Scripts/python -runLOOCV=true -dep=false,true -dims=AllDims -lpIndep=2 -lpDep=2 -adjustSquaredDiff=true -useSquaredDiff=true -params=range:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,twe -d=HandMovementDirection,LSST,StandWalkJump,Cricket,SelfRegulationSCP1,SelfRegulationSCP2,EthanolConcentration
+
+# screen -Logfile nc2_32cpu_1208_batch2_msm.slog -L java -Xmx64g -cp "mKNN_v1208.jar:lib/*" application.test.knn.MultivarKNNApp -data=../data/ -a=Multivariate2018_ts -norm -seed=6463564 -t=0 -vb=1 -tf=yyyy-MM-dd-HHmmSS -o=out/nc2_32cpu_1208/ -sf=n2-cpu32-r0.csv  -exportTrainQueryFile=true -exportTestQueryFile=true -runTesting=false -testParamFileSuffix=-train-d -generateBestParamFile=false -python=venv/Scripts/python -runLOOCV=true -dep=false,true -dims=AllDims -lpIndep=2 -lpDep=2 -adjustSquaredDiff=true -useSquaredDiff=true -params=range:0,100,1 -m=msm -d=HandMovementDirection,LSST,StandWalkJump,Cricket,SelfRegulationSCP1,SelfRegulationSCP2,EthanolConcentration
+
+# screen -Logfile nc2_32cpu_1208_batch3b_no_msm.slog -L java -Xmx64g -cp "mKNN_v1208.jar:lib/*" application.test.knn.MultivarKNNApp -data=../data/ -a=Multivariate2018_ts -norm -seed=6463564 -t=0 -vb=1 -tf=yyyy-MM-dd-HHmmSS -o=out/nc2_32cpu_1208/ -sf=n2-cpu32-r0.csv  -exportTrainQueryFile=true -exportTestQueryFile=true -runTesting=false -testParamFileSuffix=-train-d -generateBestParamFile=false -python=venv/Scripts/python -runLOOCV=true -dep=false,true -dims=AllDims -lpIndep=2 -lpDep=2 -adjustSquaredDiff=true -useSquaredDiff=true -params=range:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,twe -d=PhonemeSpectra,PEMS-SF,MotorImagery
+
+# screen -Logfile nc2_32cpu_1208_batch3b_msm.slog -L java -Xmx64g -cp "mKNN_v1208.jar:lib/*" application.test.knn.MultivarKNNApp -data=../data/ -a=Multivariate2018_ts -norm -seed=6463564 -t=0 -vb=1 -tf=yyyy-MM-dd-HHmmSS -o=out/nc2_32cpu_1208/ -sf=n2-cpu32-r0.csv  -exportTrainQueryFile=true -exportTestQueryFile=true -runTesting=false -testParamFileSuffix=-train-d -generateBestParamFile=false -python=venv/Scripts/python -runLOOCV=true -dep=false,true -dims=AllDims -lpIndep=2 -lpDep=2 -adjustSquaredDiff=true -useSquaredDiff=true -params=range:0,100,1 -m=msm -d=PhonemeSpectra,PEMS-SF,MotorImagery
+
+
+# 20-8-2020 m3 testing
+# python launcher.py -j=test -mem=500 -time=10:00:00 -otesting-20-8-2020 -p=100:0,100,1 -m=euc -d=Cricket:HandMovementDirection:LSST:SelfRegulationSCP1 -dry
+
+
+# 23-08-2020
+
+python launcher.py -j=test -mem=200 -time=00:30:00 -o=m3-2308 -p=100:0,100,1 -m=euc,dtwf,dtwr -d=ERing -dry
+
+python launcher.py -j=train -mem=800 -time=20:00:00 -o=m3-2308 -p=100:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw,wddtw:lcss,erp:twe:msm -d=SelfRegulationSCP1:SelfRegulationSCP2:EthanolConcentration:Heartbeat:DuckDuckGeese:PenDigits,PEMS-SF,PhonemeSpectra -dry
+
+python launcher.py -j=train -mem=1000 -time=23:00:00 -o=m3-2308 -p=100:0,100,1 -m=euc,dtwf:dtwr:ddtwf:ddtwr:wdtw:wddtw:lcss:erp:twe:msm -d=PhonemeSpectra:MotorImagery -dry
+
+# m3
+# python launcher.py -j=er -mem=200 -time=00:30:00 -o=m3-2308 -dp=false:true -p=50:0,100,1 -m=euc,dtwf,dtwr -d=ERing -dry
+
+python launcher.py -j=fd -mem=1000 -time=24:00:00 -o=m3-2308 -dp=false:true -p=100:0,100,1 -m=euc,dtwf,ddtwf -d=FaceDetection -dry
+# python launcher.py -j=fd -mem=1000 -time=24:00:00 -o=m3-2308 -dp=false:true -p=20:0,100,1 -m=dtwr:ddtwr:wdtw:wddtw:lcss:erp:twe:msm -d=FaceDetection -dry
+# python launcher.py -j=mi -mem=1000 -time=23:00:00 -o=m3-2308 -dp=false:true  -p=10:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw:wddtw:lcss:erp:twe:msm -d=MotorImagery -dry
+
+# python launcher.py -j=fd -mem=500 -time=5:00:00 -o=m3-2308 -dp=true -p=100:75,100,1 -m=wddtw:twe:msm -d=PEMS-SF -dry to nc3
+# python launcher.py -j=pm -mem=500 -time=20:00:00 -o=m3-2308 -dp=true -p=50:0,100,1 -m=msm -d=PEMS-SF -dry
+# python launcher.py -j=pm -mem=500 -time=20:00:00 -o=m3-2308 -dp=true -p=50:0,100,1 -m=twe -d=PEMS-SF -dry
+
+# m3 - 4-9-2020 - unnormalized
+# python3 launcher.py -j=un -mem=800 -time=24:00:00 -o=m3-2308-unorm -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw,wddtw:lcss,msm:erp,twe -d=ERing,BasicMotions,Libras,RacketSports,AtrialFibrillation,NATOPS,Handwriting,Epilepsy,UWaveGestureLibrary,FingerMovements,ArticularyWordRecognition,HandMovementDirection,LSST,StandWalkJump,Cricket,PenDigits:Heartbeat,DuckDuckGeese:SelfRegulationSCP1,SelfRegulationSCP2:EthanolConcentration:PEMS-SF -dry
+
+python3 launcher.py -j=un -mem=800 -time=24:00:00 -o=m3-2308-unorm -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw:wddtw:lcss:msm:erp:twe -d=PEMS-SF -dry
+
+
+# m3 10-9-2020 -- 0.0.6:2020-9-10:erp and lcss param per dim --
+
+# norm, erp and lcss fix
+python3 launcher.py -j=b1a -mem=500 -time=12:00:00 -o=m3-1009 -norm=true -dp=false,true -p=100:0,100,1 -m=lcss,erp -d=ERing,BasicMotions,Libras,RacketSports,AtrialFibrillation,NATOPS,Handwriting,Epilepsy,UWaveGestureLibrary,FingerMovements,ArticularyWordRecognition,HandMovementDirection,StandWalkJump,Cricket
+python3 launcher.py -j=b1b -mem=500 -time=12:00:00 -o=m3-1009 -norm=true -dp=false,true -p=100:0,100,1 -m=lcss,erp -d=Heartbeat:SelfRegulationSCP1,SelfRegulationSCP2:DuckDuckGeese:EthanolConcentration
+python3 launcher.py -j=b2 -mem=1000 -time=12:00:00 -o=m3-1009 -norm=true -dp=false,true -p=100:0,100,1 -m=lcss,erp -d=LSST,PenDigits
+python3 launcher.py -j=ps -mem=1000 -time=15:00:00 -o=m3-1009 -norm=true -dp=false:true -p=100:0,100,1 -m=lcss:erp -d=PEMS-SF
+python3 launcher.py -j=ph -mem=1000 -time=12:00:00 -o=m3-1009 -norm=true -dp=false:true -p=20:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw:wddtw:lcss:msm:erp:twe -d=PhonemeSpectra
+python3 launcher.py -j=fd -mem=1000 -time=24:00:00 -o=m3-1009 -norm=true -dp=false:true -p=10:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw:wddtw:lcss:erp:twe -d=FaceDetection
+# python3 launcher.py -j=fd -mem=1000 -time=24:00:00 -o=m3-1009 -norm=true -dp=false:true -p=10:0,100,1 -m=msm -d=FaceDetection
+# unnorm
+python3 launcher.py -j=b1a-n -mem=500 -time=12:00:00 -o=m3-1009-unnorm -norm=false -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw,wddtw:lcss,msm:erp,twe -d=ERing,BasicMotions,Libras,RacketSports,AtrialFibrillation,NATOPS,Handwriting,Epilepsy,UWaveGestureLibrary,FingerMovements,ArticularyWordRecognition,HandMovementDirection,StandWalkJump,Cricket
+python3 launcher.py -j=b1b-n -mem=500 -time=12:00:00 -o=m3-1009-unnorm -norm=false -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr -d=Heartbeat:SelfRegulationSCP1,SelfRegulationSCP2:DuckDuckGeese:EthanolConcentration
+python3 launcher.py -j=b2-n -mem=1000 -time=12:00:00 -o=m3-1009-unnorm -norm=false -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr -d=LSST,PenDigits
+python3 launcher.py -j=ps-n -mem=1000 -time=15:00:00 -o=m3-1009-unnorm -norm=false -dp=false:true -p=100:0,100,1 -m=euc,dtwf,dtwr -d=PEMS-SF
+
+# l1 vs l2
+
+# 12/12/2012
+python3 launcher.py -j=mi -mem=1000 -time=24:00:00 -o=m3-1009 -norm=true -dp=false:true -p=5:0,100,1 -m=euc,dtwf,dtwr -d=MotorImagery
+python3 launcher.py -j=mi -mem=1000 -time=24:00:00 -o=m3-1009 -norm=true -dp=false:true -p=5:0,100,1 -m=euc,dtwf,dtwr -d=MotorImagery
+
+screen -Logfile nc1_32cpu_1009_mi_lcss.slog -L java -Xmx64g -cp "mKNN_v1009.jar:lib/*" application.test.knn.MultivarKNNApp -data=../data/ -a=Multivariate2018_ts -norm=true -seed=6463564 -t=0 -vb=1 -tf=yyyy-MM-dd-HHmmSS -o=out/nc1_32cpu_1009/ -sf=n1-cpu32-r0.csv -fileOutput=overwrite -exportTrainQueryFile=true -exportTestQueryFile=true -runTesting=false -testDir=out/nc1_32cpu_1009/test/ -testParamFileSuffixes=i,d,id,b -generateBestParamFiles=false -python=venv/Scripts/python -runLOOCV=true -dep=false,true -dims=AllDims -lpIndep=2 -lpDep=2 -adjustSquaredDiff=true -useSquaredDiff=true -params=range:0,100,1 -m=lcss -d=MotorImagery
+
+screen -Logfile nc2_32cpu_1009_mi_twe.slog -L java -Xmx64g -cp "mKNN_v1009.jar:lib/*" application.test.knn.MultivarKNNApp -data=../data/ -a=Multivariate2018_ts -norm=true -seed=6463564 -t=0 -vb=1 -tf=yyyy-MM-dd-HHmmSS -o=out/nc2_32cpu_1009/ -sf=n2-cpu32-r0.csv -fileOutput=overwrite -exportTrainQueryFile=true -exportTestQueryFile=true -runTesting=false -testDir=out/nc2_32cpu_1009/test/ -testParamFileSuffixes=i,d,id,b -generateBestParamFiles=false -python=venv/Scripts/python -runLOOCV=true -dep=false,true -dims=AllDims -lpIndep=2 -lpDep=2 -adjustSquaredDiff=true -useSquaredDiff=true -params=range:0,100,1 -m=twe -d=MotorImagery
+
+# 17/10/2020
+# +norm
+python3 launcher.py -j=b1a -mem=500 -time=12:00:00 -o=m3-1710+norm -norm=true -dp=false,true -p=100:0,100,1 -m=lcss,erp -d=ERing,BasicMotions,Libras,RacketSports,AtrialFibrillation,NATOPS,Handwriting,Epilepsy,UWaveGestureLibrary,FingerMovements,ArticularyWordRecognition,HandMovementDirection,StandWalkJump,Cricket
+python3 launcher.py -j=b1b -mem=500 -time=12:00:00 -o=m3-1710+norm -norm=true -dp=false,true -p=100:0,100,1 -m=lcss,erp -d=Heartbeat:SelfRegulationSCP1,SelfRegulationSCP2:DuckDuckGeese:EthanolConcentration
+python3 launcher.py -j=b2 -mem=1000 -time=12:00:00 -o=m3-1710+norm -norm=true -dp=false,true -p=100:0,100,1 -m=lcss,erp -d=LSST,PenDigits
+python3 launcher.py -j=ps -mem=1000 -time=15:00:00 -o=m3-1710+norm -norm=true -dp=false:true -p=100:0,100,1 -m=lcss:erp -d=PEMS-SF
+python3 launcher.py -j=ph -mem=1000 -time=12:00:00 -o=m3-1710+norm -norm=true -dp=false:true -p=20:0,100,1 -m=lcss:erp -d=PhonemeSpectra
+python3 launcher.py -j=fd -mem=1000 -time=24:00:00 -o=m3-1710+norm -norm=true -dp=false:true -p=10:0,100,1 -m=lcss:erp -d=FaceDetection
+python3 launcher.py -j=mi -mem=1000 -time=24:00:00 -o=m3-1710+norm -norm=true -dp=false:true -p=5:0,100,1 -m=lcss:erp -d=MotorImagery
+
+# -norm
+python3 launcher.py -j=b1a -mem=500 -time=2:00:00 -o=m3-1710-i2d2-norm -norm=false -dp=false,true -p=100:0,100,1 -m=lcss,erp -d=ERing,BasicMotions,Libras,RacketSports,AtrialFibrillation,NATOPS,Handwriting,Epilepsy,UWaveGestureLibrary,FingerMovements,ArticularyWordRecognition,HandMovementDirection,StandWalkJump,Cricket
+python3 launcher.py -j=b1b -mem=500 -time=4:00:00 -o=m3-1710-i2d2-norm -norm=false -dp=false,true -p=100:0,100,1 -m=lcss,erp -d=Heartbeat:SelfRegulationSCP1,SelfRegulationSCP2:DuckDuckGeese:EthanolConcentration
+python3 launcher.py -j=b2 -mem=1000 -time=4:00:00 -o=m3-1710-i2d2-norm -norm=false -dp=false,true -p=100:0,100,1 -m=lcss,erp -d=LSST,PenDigits
+python3 launcher.py -j=ps -mem=1000 -time=15:00:00 -o=m3-1710-i2d2-norm -norm=false -dp=false:true -p=100:0,100,1 -m=lcss:erp -d=PEMS-SF
+python3 launcher.py -j=ph -mem=1000 -time=12:00:00 -o=m3-1710-i2d2-norm -norm=false -dp=false:true -p=20:0,100,1 -m=lcss:erp -d=PhonemeSpectra
+
+python3 launcher.py -j=fd -mem=1000 -time=24:00:00 -o=m3-1710-i2d2-norm -norm=false -dp=false:true -p=10:0,100,1 -m=lcss:erp -d=FaceDetection
+python3 launcher.py -j=mi -mem=1000 -time=24:00:00 -o=m3-1710-i2d2-norm -norm=false -dp=false:true -p=5:0,100,1 -m=lcss:erp -d=MotorImagery
+
+python3 launcher.py -j=test -mem=500 -time=2:00:00 -o=test -norm=false -dp=false,true -p=100:0,100,1 -m=lcss,erp -d=ERing -dry
+
+
+
+
+
+
+
+# 20-10-2020 --------------
+python3 launcher.py -j=test -mem=500 -time=1:00:00 -o=test -norm=false -pi=1 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=ERing
+
+# m3-2010-i1d2-norm ------- # jobs =  start: 20-10-2020 19:20 end:
+# python3 launcher.py -j=1b1a -mem=500 -time=4:00:00 -o=m3-2010-i1d2-norm-1 -norm=false -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw,wddtw:lcss,erp:msm,twe -d=ERing,BasicMotions,Libras,RacketSports,AtrialFibrillation,NATOPS,Handwriting,Epilepsy,UWaveGestureLibrary,FingerMovements,ArticularyWordRecognition,HandMovementDirection,StandWalkJump,Cricket
+# python3 launcher.py -j=1b1b -mem=500 -time=6:00:00 -o=m3-2010-i1d2-norm-1 -norm=false -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw,wddtw:lcss,erp:msm,twe -d=Heartbeat:SelfRegulationSCP1,SelfRegulationSCP2:DuckDuckGeese:EthanolConcentration
+# python3 launcher.py -j=1b2 -mem=1000 -time=4:00:00 -o=m3-2010-i1d2-norm-1 -norm=false -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw,wddtw:lcss,erp:msm,twe -d=LSST,PenDigits
+# m3-2010-i1d2+norm ------- # jobs =  start: 20-10-2020 18:00 end:
+# python3 launcher.py -j=2b1a -mem=500 -time=4:00:00 -o=m3-2010-i1d2+norm-2 -norm=true -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw,wddtw:lcss,erp:msm,twe -d=ERing,BasicMotions,Libras,RacketSports,AtrialFibrillation,NATOPS,Handwriting,Epilepsy,UWaveGestureLibrary,FingerMovements,ArticularyWordRecognition,HandMovementDirection,StandWalkJump,Cricket
+# python3 launcher.py -j=2b1b -mem=500 -time=6:00:00 -o=m3-2010-i1d2+norm-2 -norm=true -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw,wddtw:lcss,erp:msm,twe -d=Heartbeat:SelfRegulationSCP1,SelfRegulationSCP2:DuckDuckGeese:EthanolConcentration
+# python3 launcher.py -j=2b2 -mem=1000 -time=4:00:00 -o=m3-2010-i1d2+norm-2 -norm=true -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw,wddtw:lcss,erp:msm,twe -d=LSST,PenDigits
+
+# m3-2010-i2d2-norm ------- # jobs =  start: 20-10-2020 18:00 end:
+# python3 launcher.py -j=b1a -mem=500 -time=10:00:00 -o=m3-2010-i2d2-norm -norm=false -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw,wddtw:lcss,erp:msm,twe -d=ERing,BasicMotions,Libras,RacketSports,AtrialFibrillation,NATOPS,Handwriting,Epilepsy,UWaveGestureLibrary,FingerMovements,ArticularyWordRecognition,HandMovementDirection,StandWalkJump,Cricket
+# python3 launcher.py -j=b1b -mem=500 -time=10:00:00 -o=m3-2010-i2d2-norm -norm=false -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw,wddtw:lcss,erp:msm,twe -d=Heartbeat:SelfRegulationSCP1,SelfRegulationSCP2:DuckDuckGeese:EthanolConcentration
+# python3 launcher.py -j=b2 -mem=1000 -time=8:00:00 -o=m3-2010-i2d2-norm -norm=false -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw,wddtw:lcss,erp:msm,twe -d=LSST,PenDigits
+# m3-2010-i2d2+norm ------- # jobs =  start: 20-10-2020 18:00 end:
+# python3 launcher.py -j=b1a -mem=500 -time=10:00:00 -o=m3-2010-i2d2+norm -norm=true -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw,wddtw:lcss,erp:msm,twe -d=ERing,BasicMotions,Libras,RacketSports,AtrialFibrillation,NATOPS,Handwriting,Epilepsy,UWaveGestureLibrary,FingerMovements,ArticularyWordRecognition,HandMovementDirection,StandWalkJump,Cricket
+# python3 launcher.py -j=b1b -mem=500 -time=10:00:00 -o=m3-2010-i2d2+norm -norm=true -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw,wddtw:lcss,erp:msm,twe -d=Heartbeat:SelfRegulationSCP1,SelfRegulationSCP2:DuckDuckGeese:EthanolConcentration
+# python3 launcher.py -j=b2 -mem=1000 -time=8:00:00 -o=m3-2010-i2d2+norm -norm=true -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw,wddtw:lcss,erp:msm,twe -d=LSST,PenDigits
+
+- failed jobs 16303503
+-
+python3 launcher.py -j=21227 -mem=500 -time=24:00:00 -o=m3-2010-failed -norm=false -pi=2 -pd=2 -dp=true -p=100:0,100,1 -m=msm -d=SelfRegulationSCP2
+python3 launcher.py -j=21230 -mem=500 -time=24:00:00 -o=m3-2010-failed -norm=false -pi=2 -pd=2 -dp=true -p=100:0,100,1 -m=msm -d=DuckDuckGeese
+
+
+python3 launcher.py -j=303503 -mem=500 -time=10:00:00 -o=m3-2010-i2d2+n-failed -norm=true -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=twe -d=Cricket
+python3 launcher.py -j=303503 -mem=500 -time=15:00:00 -o=m3-2010-i2d2+n-failed -norm=true -pi=2 -pd=2 -dp=true -p=100:0,100,1 -m=msm -d=Heartbeat
+python3 launcher.py -j=303503 -mem=500 -time=15:00:00 -o=m3-2010-i2d2+n-failed -norm=true -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=twe -d=Heartbeat
+
+python3 launcher.py -j=303510 -mem=500 -time=15:00:00 -o=m3-2010-i2d2+n-failed -norm=true -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=ddtwr -d=SelfRegulationSCP2
+python3 launcher.py -j=303511a -mem=500 -time=15:00:00 -o=m3-2010-i2d2+n-failed -norm=true -pi=2 -pd=2 -dp=true -p=100:0,100,1 -m=wdtw -d=SelfRegulationSCP2
+python3 launcher.py -j=303511b -mem=500 -time=15:00:00 -o=m3-2010-i2d2+n-failed -norm=true -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=wddtw -d=SelfRegulationSCP2
+
+python3 launcher.py -j=303513a -mem=500 -time=24:00:00 -o=m3-2010-i2d2+n-failed -norm=true -pi=2 -pd=2 -dp=false:true -p=100:0,100,1 -m=msm -d=SelfRegulationSCP1
+python3 launcher.py -j=303513b -mem=500 -time=15:00:00 -o=m3-2010-i2d2+n-failed -norm=true -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=twe -d=SelfRegulationSCP1
+python3 launcher.py -j=303513c -mem=500 -time=24:00:00 -o=m3-2010-i2d2+n-failed -norm=true -pi=2 -pd=2 -dp=false:true -p=100:0,100,1 -m=msm -d=SelfRegulationSCP2
+python3 launcher.py -j=303513d -mem=500 -time=15:00:00 -o=m3-2010-i2d2+n-failed -norm=true -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=twe -d=SelfRegulationSCP2
+
+python3 launcher.py -j=303518 -mem=500 -time=24:00:00 -o=m3-2010-i2d2+n-failed -norm=true -pi=2 -pd=2 -dp=false:true -p=100:0,100,1 -m=msm:twe -d=DuckDuckGeese
+
+python3 launcher.py -j=303521 -mem=500 -time=15:00:00 -o=m3-2010-i2d2+n-failed -norm=true -pi=2 -pd=2 -dp=true -p=100:0,100,1 -m=wddtw -d=EthanolConcentration
+python3 launcher.py -j=303518 -mem=500 -time=24:00:00 -o=m3-2010-i2d2+n-failed -norm=true -pi=2 -pd=2 -dp=false:true -p=100:0,100,1 -m=msm:twe -d=DuckDuckGeese
+
+
+# testing
+python3 launcher.py -train=false -test=true -j=tsa-i1-n -mem=500 -time=12:00:00 -o=i1d2-norm -norm=false -pi=1 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=ERing,BasicMotions,Libras,RacketSports,AtrialFibrillation,NATOPS,Handwriting,Epilepsy,UWaveGestureLibrary,FingerMovements,ArticularyWordRecognition,HandMovementDirection,StandWalkJump,Cricket
+python3 launcher.py -train=false -test=true -j=tsb-i1-n -mem=500 -time=12:00:00 -o=i1d2-norm -norm=false -pi=1 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=Heartbeat:SelfRegulationSCP1,SelfRegulationSCP2:DuckDuckGeese:EthanolConcentration:LSST,PenDigits
+
+python3 launcher.py -train=false -test=true -j=tsa-i1+n -mem=500 -time=12:00:00 -o=i1d2+norm -norm=true -pi=1 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=ERing,BasicMotions,Libras,RacketSports,AtrialFibrillation,NATOPS,Handwriting,Epilepsy,UWaveGestureLibrary,FingerMovements,ArticularyWordRecognition,HandMovementDirection,StandWalkJump,Cricket
+python3 launcher.py -train=false -test=true -j=tsb-i1-n -mem=500 -time=12:00:00 -o=i1d2+norm -norm=true -pi=1 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=Heartbeat:SelfRegulationSCP1,SelfRegulationSCP2:DuckDuckGeese:EthanolConcentration:LSST,PenDigits
+
+python3 launcher.py -train=false -test=true -j=tsa-d2-n -mem=500 -time=12:00:00 -o=i2d2-norm -norm=false -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=ERing,BasicMotions,Libras,RacketSports,AtrialFibrillation,NATOPS,Handwriting,Epilepsy,UWaveGestureLibrary,FingerMovements,ArticularyWordRecognition,HandMovementDirection,StandWalkJump,Cricket
+python3 launcher.py -train=false -test=true -j=tsb-d2-n -mem=500 -time=12:00:00 -o=i2d2-norm -norm=false -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=Heartbeat:SelfRegulationSCP1,SelfRegulationSCP2:DuckDuckGeese:EthanolConcentration:LSST,PenDigits
+
+python3 launcher.py -train=false -test=true -j=tsa-d2+n -mem=500 -time=12:00:00 -o=i2d2+norm -norm=true -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=ERing,BasicMotions,Libras,RacketSports,AtrialFibrillation,NATOPS,Handwriting,Epilepsy,UWaveGestureLibrary,FingerMovements,ArticularyWordRecognition,HandMovementDirection,StandWalkJump,Cricket
+python3 launcher.py -train=false -test=true -j=tsb-d2-n -mem=500 -time=12:00:00 -o=i2d2+norm -norm=true -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=Heartbeat:SelfRegulationSCP1,SelfRegulationSCP2:DuckDuckGeese:EthanolConcentration:LSST,PenDigits
+
+python3 launcher.py -train=false -test=true -j=tsc-i1-n -mem=500 -time=12:00:00 -o=i1d2-norm -norm=false -pi=1 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=DuckDuckGeese
+python3 launcher.py -train=false -test=true -j=tsc-i1-n -mem=500 -time=12:00:00 -o=i1d2+norm -norm=true -pi=1 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=DuckDuckGeese
+python3 launcher.py -train=false -test=true -j=tsc-d2-n -mem=500 -time=12:00:00 -o=i2d2-norm -norm=false -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=DuckDuckGeese
+python3 launcher.py -train=false -test=true -j=tsc-d2-n -mem=500 -time=12:00:00 -o=i2d2+norm -norm=true -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=DuckDuckGeese
+
+# python3 launcher.py -train=false -test=true -j=tsc-i1-n -mem=500 -time=24:00:00 -o=i1d2-norm -norm=false -pi=1 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=Heartbeat
+python3 launcher.py -train=false -test=true -j=tsc-i1-n -mem=500 -time=24:00:00 -o=i1d2+norm -norm=true -pi=1 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=Heartbeat
+python3 launcher.py -train=false -test=true -j=tsc-d2-n -mem=500 -time=24:00:00 -o=i2d2-norm -norm=false -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=Heartbeat
+# python3 launcher.py -train=false -test=true -j=tsc-d2-n -mem=500 -time=24:00:00 -o=i2d2+norm -norm=true -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=Heartbeat
+
+# l1 fix
+# python3 launcher.py -train=true -test=false -j=tsa-i1-n -mem=500 -time=12:00:00 -o=i1d2-norm-l1_sqrt -norm=false -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=ERing,BasicMotions,Libras,RacketSports,AtrialFibrillation,NATOPS,Handwriting,Epilepsy,UWaveGestureLibrary,FingerMovements,ArticularyWordRecognition,HandMovementDirection,StandWalkJump,Cricket
+# python3 launcher.py -train=true -test=false -j=tsb-i1-n -mem=500 -time=15:00:00 -o=i1d2-norm-l1_sqrt -norm=false -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=Heartbeat:SelfRegulationSCP1,SelfRegulationSCP2:DuckDuckGeese:EthanolConcentration:LSST,PenDigits
+# python3 launcher.py -train=true -test=false -j=tsc-i1-n -mem=500 -time=12:00:00 -o=i1d2-norm-l1_sqrt -norm=false -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=DuckDuckGeese
+#
+# python3 launcher.py -train=true -test=false -j=tsa-i1+n -mem=500 -time=12:00:00 -o=i1d2+norm-l1_sqrt -norm=true -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=ERing,BasicMotions,Libras,RacketSports,AtrialFibrillation,NATOPS,Handwriting,Epilepsy,UWaveGestureLibrary,FingerMovements,ArticularyWordRecognition,HandMovementDirection,StandWalkJump,Cricket
+# python3 launcher.py -train=true -test=false -j=tsb-i1-n -mem=500 -time=15:00:00 -o=i1d2+norm-l1_sqrt -norm=true -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=Heartbeat:SelfRegulationSCP1,SelfRegulationSCP2:DuckDuckGeese:EthanolConcentration:LSST,PenDigits
+# python3 launcher.py -train=true -test=false -j=tsc-i1-n -mem=500 -time=12:00:00 -o=i1d2+norm-l1_sqrt -norm=true -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=DuckDuckGeese
+#1
+@
+python3 launcher.py -train=true -test=false -j=tsa-i1-n -mem=500 -time=10:00:00 -o=i2d2-norm-l1_sqrt_euc -norm=false -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc -d=ERing,BasicMotions,Libras,RacketSports,AtrialFibrillation,NATOPS,Handwriting,Epilepsy,UWaveGestureLibrary,FingerMovements,ArticularyWordRecognition,HandMovementDirection,StandWalkJump,Cricket
+python3 launcher.py -train=true -test=false -j=tsb-i1-n -mem=500 -time=10:00:00 -o=i2d2-norm-l1_sqrt_euc -norm=false -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc -d=Heartbeat:SelfRegulationSCP1,SelfRegulationSCP2:DuckDuckGeese:EthanolConcentration:LSST,PenDigits
+python3 launcher.py -train=true -test=false -j=tsc-i1-n -mem=500 -time=10:00:00 -o=i2d2-norm-l1_sqrt_euc -norm=false -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc -d=DuckDuckGeese
+
+python3 launcher.py -train=true -test=false -j=tsa-i1+n -mem=500 -time=10:00:00 -o=i2d2+norm-l1_sqrt_euc -norm=true -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc -d=ERing,BasicMotions,Libras,RacketSports,AtrialFibrillation,NATOPS,Handwriting,Epilepsy,UWaveGestureLibrary,FingerMovements,ArticularyWordRecognition,HandMovementDirection,StandWalkJump,Cricket
+python3 launcher.py -train=true -test=false -j=tsb-i1+n -mem=500 -time=10:00:00 -o=i2d2+norm-l1_sqrt_euc -norm=true -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc -d=Heartbeat:SelfRegulationSCP1,SelfRegulationSCP2:DuckDuckGeese:EthanolConcentration:LSST,PenDigits
+python3 launcher.py -train=true -test=false -j=tsc-i1+n -mem=500 -time=10:00:00 -o=i2d2+norm-l1_sqrt_euc -norm=true -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc -d=DuckDuckGeese
+
+
+
+
+
+python3 launcher.py -train=true -test=false -j=tsc-i1-n -mem=500 -time=24:00:00 -o=i1d2-norm-l1_sqrt -norm=false -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=msm:twe -d=Heartbeat
+python3 launcher.py -train=true -test=false -j=tsc-i1-n -mem=500 -time=24:00:00 -o=i1d2-norm-l1_sqrt -norm=false -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=ddtwr:wdtw,wddtw:lcss,erp:msm:twe -d=SelfRegulationSCP2
+python3 launcher.py -train=true -test=false -j=tsc-i1-n -mem=500 -time=24:00:00 -o=i1d2-norm-l1_sqrt -norm=false -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=twe -d=EthanolConcentration
+
+
+
+
+python3 launcher.py -train=true -test=false -j=tsc-i1+n -mem=500 -time=24:00:00 -o=i1d2+norm-l1_sqrt -norm=true -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=msm:twe -d=Heartbeat
+python3 launcher.py -train=true -test=false -j=tsc-i1+n -mem=500 -time=24:00:00 -o=i1d2+norm-l1_sqrt -norm=true -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=ddtwr:wdtw,wddtw:lcss,erp:msm:twe -d=SelfRegulationSCP2
+python3 launcher.py -train=true -test=false -j=tsc-i1+n -mem=500 -time=24:00:00 -o=i1d2+norm-l1_sqrt -norm=true -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=twe -d=EthanolConcentration
+python3 launcher.py -train=true -test=false -j=tsc-i1+n -mem=500 -time=24:00:00 -o=i1d2+norm-l1_sqrt -norm=true -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=lcss,erp:msm:twe -d=PenDigits
+python3 launcher.py -train=true -test=false -j=tsc-i1+n -mem=500 -time=24:00:00 -o=i1d2+norm-l1_sqrt -norm=true -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=twe -d=DuckDuckGeese
+
+
+# testing
+python3 launcher.py -train=false -test=true -j=tsa-i1-n -mem=500 -time=15:00:00 -o=i1d2-norm -norm=false -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=ERing,BasicMotions,Libras,RacketSports,AtrialFibrillation,NATOPS,Handwriting,Epilepsy,UWaveGestureLibrary,FingerMovements,ArticularyWordRecognition,HandMovementDirection,StandWalkJump,Cricket
+python3 launcher.py -train=false -test=true -j=tsb-i1-n -mem=500 -time=15:00:00 -o=i1d2-norm -norm=false -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=Heartbeat:SelfRegulationSCP1,SelfRegulationSCP2:DuckDuckGeese:EthanolConcentration:LSST,PenDigits
+python3 launcher.py -train=false -test=true -j=tsc-i1-n -mem=500 -time=15:00:00 -o=i1d2-norm -norm=false -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=DuckDuckGeese
+
+python3 launcher.py -train=false -test=true -j=tsa-i1+n -mem=500 -time=15:00:00 -o=i1d2+norm -norm=true -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=ERing,BasicMotions,Libras,RacketSports,AtrialFibrillation,NATOPS,Handwriting,Epilepsy,UWaveGestureLibrary,FingerMovements,ArticularyWordRecognition,HandMovementDirection,StandWalkJump,Cricket
+python3 launcher.py -train=false -test=true -j=tsb-i1-n -mem=500 -time=15:00:00 -o=i1d2+norm -norm=true -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=Heartbeat:SelfRegulationSCP1,SelfRegulationSCP2:DuckDuckGeese:EthanolConcentration:LSST,PenDigits
+python3 launcher.py -train=false -test=true -j=tsc-i1-n -mem=500 -time=15:00:00 -o=i1d2+norm -norm=true -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=DuckDuckGeese
+
+python3 launcher.py -train=false -test=true -j=tsa-i1-n -mem=500 -time=10:00:00 -o=i2d2-norm -norm=false -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc -d=ERing,BasicMotions,Libras,RacketSports,AtrialFibrillation,NATOPS,Handwriting,Epilepsy,UWaveGestureLibrary,FingerMovements,ArticularyWordRecognition,HandMovementDirection,StandWalkJump,Cricket
+python3 launcher.py -train=false -test=true -j=tsb-i1-n -mem=500 -time=10:00:00 -o=i2d2-norm -norm=false -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc -d=Heartbeat:SelfRegulationSCP1,SelfRegulationSCP2:DuckDuckGeese:EthanolConcentration:LSST,PenDigits
+python3 launcher.py -train=false -test=true -j=tsc-i1-n -mem=500 -time=10:00:00 -o=i2d2-norm -norm=false -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc -d=DuckDuckGeese
+
+python3 launcher.py -train=false -test=true -j=tsa-i1+n -mem=500 -time=10:00:00 -o=i2d2+norm -norm=true -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc -d=ERing,BasicMotions,Libras,RacketSports,AtrialFibrillation,NATOPS,Handwriting,Epilepsy,UWaveGestureLibrary,FingerMovements,ArticularyWordRecognition,HandMovementDirection,StandWalkJump,Cricket
+python3 launcher.py -train=false -test=true -j=tsb-i1-n -mem=500 -time=10:00:00 -o=i2d2+norm -norm=true -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc -d=Heartbeat:SelfRegulationSCP1,SelfRegulationSCP2:DuckDuckGeese:EthanolConcentration:LSST,PenDigits
+python3 launcher.py -train=false -test=true -j=tsc-i1-n -mem=500 -time=10:00:00 -o=i2d2+norm -norm=true -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc -d=DuckDuckGeese
+
+
+
+python3 launcher.py -train=true -test=false -j=tsc-i1-n -mem=500 -time=24:00:00 -o=i2d2-norm-failed -norm=false -pi=2 -pd=2 -dp=false:true -p=100:0,100,1 -m=msm -d=EthanolConcentration
+python3 launcher.py -train=true -test=false -j=tsc-i1-n -mem=500 -time=24:00:00 -o=i2d2+norm-failed -norm=true -pi=2 -pd=2 -dp=false:true -p=100:0,100,1 -m=msm -d=EthanolConcentration
+
+python3 launcher.py -train=true -test=false -j=tsc-i1-n -mem=500 -time=24:00:00 -o=i2d2+norm-failed -norm=true -pi=2 -pd=2 -dp=false -p=100:0,100,1 -m=wddtw -d=EthanolConcentration
+python3 launcher.py -train=true -test=false -j=tsc-i1-n -mem=500 -time=24:00:00 -o=i2d2+norm-failed -norm=true -pi=2 -pd=2 -dp=false -p=100:0,100,1 -m=twe -d=EthanolConcentration
+python3 launcher.py -train=true -test=false -j=tsc-i1-n -mem=500 -time=24:00:00 -o=i2d2+norm-failed -norm=true -pi=2 -pd=2 -dp=true -p=100:0,100,1 -m=twe -d=EthanolConcentration
+
+python3 launcher.py -train=true -test=false -j=tsc-i1-n -mem=500 -time=24:00:00 -o=i1d2+norm-failed -norm=true -pi=1
+-pd=2 -dp=true -p=100:0,100,1 -m=msm -d=EthanolConcentration
+
+
+python3 launcher.py -train=true -test=false -j=tsc-i1-n -mem=500 -time=24:00:00 -o=i1d2+norm-failed -norm=true -pi=1
+-pd=2 -dp=true -p=100:0,100,1 -m=twe -d=EthanolConcentration
+
+# -----------
+# --
+python3 launcher.py -train=false -test=true -j=tsa-i1-n -mem=500 -time=15:00:00 -o=cleaned/i1d2-norm -norm=false -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=ERing,BasicMotions,Libras,RacketSports,AtrialFibrillation,NATOPS,Handwriting,Epilepsy,UWaveGestureLibrary,FingerMovements,ArticularyWordRecognition,HandMovementDirection,StandWalkJump,Cricket
+python3 launcher.py -train=false -test=true -j=tsb-i1-n -mem=500 -time=15:00:00 -o=cleaned/i1d2-norm -norm=false -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=Heartbeat:SelfRegulationSCP1,SelfRegulationSCP2:DuckDuckGeese:EthanolConcentration:LSST,PenDigits
+python3 launcher.py -train=false -test=true -j=tsc-i1-n -mem=500 -time=15:00:00 -o=cleaned/i1d2-norm -norm=false -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=DuckDuckGeese
+
+python3 launcher.py -train=false -test=true -j=tsa-i1+n -mem=500 -time=15:00:00 -o=cleaned/i1d2+norm -norm=true -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=ERing,BasicMotions,Libras,RacketSports,AtrialFibrillation,NATOPS,Handwriting,Epilepsy,UWaveGestureLibrary,FingerMovements,ArticularyWordRecognition,HandMovementDirection,StandWalkJump,Cricket
+python3 launcher.py -train=false -test=true -j=tsb-i1+n -mem=500 -time=15:00:00 -o=cleaned/i1d2+norm -norm=true -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=Heartbeat:SelfRegulationSCP1,SelfRegulationSCP2:DuckDuckGeese:EthanolConcentration:LSST,PenDigits
+python3 launcher.py -train=false -test=true -j=tsc-i1+n -mem=500 -time=15:00:00 -o=cleaned/i1d2+norm -norm=true -pi=1 -pd=2 -dp=false -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=DuckDuckGeese
+
+python3 launcher.py -train=false -test=true -j=tsa-d2-n -mem=500 -time=10:00:00 -o=cleaned/i2d2-norm -norm=false -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=ERing,BasicMotions,Libras,RacketSports,AtrialFibrillation,NATOPS,Handwriting,Epilepsy,UWaveGestureLibrary,FingerMovements,ArticularyWordRecognition,HandMovementDirection,StandWalkJump,Cricket
+python3 launcher.py -train=false -test=true -j=tsb-d2-n -mem=500 -time=10:00:00 -o=cleaned/i2d2-norm -norm=false -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=Heartbeat:SelfRegulationSCP1,SelfRegulationSCP2:DuckDuckGeese:EthanolConcentration:LSST,PenDigits
+python3 launcher.py -train=false -test=true -j=tsc-d2-n -mem=500 -time=10:00:00 -o=cleaned/i2d2-norm -norm=false -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=DuckDuckGeese
+
+python3 launcher.py -train=false -test=true -j=tsa-d2+n -mem=500 -time=10:00:00 -o=cleaned/i2d2+norm -norm=true -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=ERing,BasicMotions,Libras,RacketSports,AtrialFibrillation,NATOPS,Handwriting,Epilepsy,UWaveGestureLibrary,FingerMovements,ArticularyWordRecognition,HandMovementDirection,StandWalkJump,Cricket
+python3 launcher.py -train=false -test=true -j=tsb-d2+n -mem=500 -time=10:00:00 -o=cleaned/i2d2+norm -norm=true -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=Heartbeat:SelfRegulationSCP1,SelfRegulationSCP2:DuckDuckGeese:EthanolConcentration:LSST,PenDigits
+python3 launcher.py -train=false -test=true -j=tsc-d2+n -mem=500 -time=10:00:00 -o=cleaned/i2d2+norm -norm=true -pi=2 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=DuckDuckGeese
+
+# large datasets
+#--- training 18/1/2021
+python3 launcher.py -train=true -test=false -j=ti1-n-ps -mem=1000 -time=24:00:00 -o=slow/i2d2-norm -norm=false -pi=1 -pd=2 -dp=false:true -p=100:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw:wddtw:lcss:erp:msm:twe -d=PEMS-SF
+python3 launcher.py -train=true -test=false -j=ti1-n-ph -mem=1000 -time=24:00:00 -o=slow/i2d2-norm -norm=false -pi=1 -pd=2 -dp=false:true -p=20:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw:wddtw:lcss:erp:msm:twe -d=PhonemeSpectra
+python3 launcher.py -train=true -test=false -j=ti1-n-fd -mem=1000 -time=24:00:00 -o=slow/i2d2-norm -norm=false -pi=1 -pd=2 -dp=false:true -p=10:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw:wddtw:lcss:erp:msm:twe -d=FaceDetection
+python3 launcher.py -train=true -test=false -j=ti1-n-mi -mem=1000 -time=24:00:00 -o=slow/i2d2-norm -norm=false -pi=1 -pd=2 -dp=false:true -p=5:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw:wddtw:lcss:erp:msm:twe -d=MotorImagery
+#--- TODO testing 18/1/2021
+python3 launcher.py -train=false -test=true -j=si1-n-ps -mem=1000 -time=24:00:00 -o=slow/i2d2-norm -norm=false -pi=1 -pd=2 -dp=false:true -p=100:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw:wddtw:lcss:erp:msm:twe -d=PEMS-SF
+python3 launcher.py -train=false -test=true -j=si1-n-ph -mem=1000 -time=24:00:00 -o=slow/i2d2-norm -norm=false -pi=1 -pd=2 -dp=false:true -p=20:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw:wddtw:lcss:erp:msm:twe -d=PhonemeSpectra
+python3 launcher.py -train=false -test=true -j=si1-n-fd -mem=1000 -time=24:00:00 -o=slow/i2d2-norm -norm=false -pi=1 -pd=2 -dp=false:true -p=10:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw:wddtw:lcss:erp:msm:twe -d=FaceDetection
+python3 launcher.py -train=false -test=true -j=si1-n-mi -mem=1000 -time=24:00:00 -o=slow/i2d2-norm -norm=false -pi=1 -pd=2 -dp=false:true -p=5:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw:wddtw:lcss:erp:msm:twe -d=MotorImagery
+
+# 26/1/2021
+
+python3 launcher.py -train=true -test=false -j=TC1-n-ps -mem=1000 -time=12:00:00 -o=slow/i1d2-norm-TC -norm=false -pi=1 -pd=2 -dp=true -p=20:0,100,1 -m=msm -d=PEMS-SF
+python3 launcher.py -train=true -test=false -j=TCi1-n-ph -mem=1000 -time=12:00:00 -o=slow/i1d2-norm-TC -norm=false -pi=1 -pd=2 -dp=true -p=5:0,100,1 -m=msm -d=PhonemeSpectra
+
+
+python3 launcher.py -train=false -test=true -j=TC1-n-ps -mem=1000 -time=12:00:00 -o=slow/i1d2-norm-TC -norm=false -pi=1 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw:wddtw:lcss:erp:msm:twe -d=PEMS-SF
+python3 launcher.py -train=false -test=true -j=TC1-n-ph -mem=1000 -time=12:00:00 -o=slow/i1d2-norm-TC -norm=false -pi=1 -pd=2 -dp=false,true -p=100:0,100,1 -m=euc,dtwf,dtwr:ddtwf,ddtwr:wdtw:wddtw:lcss:erp:msm:twe -d=PhonemeSpectra
+
+# nectar testing
+# screen -Logfile nectar1_test.slog -L java -Xmx64g -cp "mKNN_v0111.jar:lib/*" application.test.knn.MultivarKNNApp -data=../data/ -a=Multivariate2018_ts -seed=6463564 -t=0 -vb=1 -useTLRandom=false -tf=yyyy-MM-dd-HHmmSS -fileOutput=overwrite -exportTrainQueryFile=true -exportTestQueryFile=true -saveTransformedDatasets=false -testDir=out/slow/i1d2-norm-TC/test/ -testParamFileSuffixes=i,d,id,b -generateBestParamFiles=false -python=venv/Scripts/python -dep=false,true -dims=AllDims -lpIndep=1 -lpDep=2 -norm=false -runLOOCV=false -runTesting=true -adjustSquaredDiff=true -useSquaredDiff=true -o=out/slow/i1d2-norm-TC/train/ -sf=summary-slow/i1d2-norm-TC.csv -params=range:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=PhonemeSpectra
+# screen -Logfile nectar2_test.slog -L java -Xmx64g -cp "mKNN_v0111.jar:lib/*" application.test.knn.MultivarKNNApp -data=../data/ -a=Multivariate2018_ts -seed=6463564 -t=0 -vb=1 -useTLRandom=false -tf=yyyy-MM-dd-HHmmSS -fileOutput=overwrite -exportTrainQueryFile=true -exportTestQueryFile=true -saveTransformedDatasets=false -testDir=out/slow/i1d2-norm-TC/test/ -testParamFileSuffixes=i,d,id,b -generateBestParamFiles=false -python=venv/Scripts/python -dep=false,true -dims=AllDims -lpIndep=1 -lpDep=2 -norm=false -runLOOCV=false -runTesting=true -adjustSquaredDiff=true -useSquaredDiff=true -o=out/slow/i1d2-norm-TC/train/ -sf=summary-slow/i1d2-norm-TC.csv -params=range:0,100,1 -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe -d=PEMS-SF

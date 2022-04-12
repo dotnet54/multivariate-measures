@@ -77,6 +77,8 @@ public class TSChiefApp {
 //			"-datasets=TwoLeadECG,SonyAIBORobotSurface1,SonyAIBORobotSurface2,MoteStrain,ECGFiveDays,Coffee,GunPoint,CBF,ItalyPowerDemand,FaceFour,ECG200,ArrowHead,BirdChicken,BeetleFly,DiatomSizeReduction,ToeSegmentation2,Wine,ToeSegmentation1,Plane,ShapeletSim,SyntheticControl,OliveOil,Beef,Meat,Trace,Symbols,DistalPhalanxTW,MiddlePhalanxOutlineAgeGroup,ProximalPhalanxOutlineAgeGroup,DistalPhalanxOutlineAgeGroup,ProximalPhalanxTW,MiddlePhalanxTW,Lightning7,Herring,Car,MedicalImages,MiddlePhalanxOutlineCorrect,DistalPhalanxOutlineCorrect,ProximalPhalanxOutlineCorrect,Ham,Lightning2,FacesUCR,SwedishLeaf,ECG5000,Fish,Wafer,OSULeaf,TwoPatterns,Adiac,FaceAll,InsectWingbeatSound,Strawberry,ChlorineConcentration,WordSynonyms,Yoga,PhalangesOutlinesCorrect,CricketY,CricketX,CricketZ,Computers,Earthquakes,Worms,WormsTwoClass,FiftyWords,SmallKitchenAppliances,LargeKitchenAppliances,Haptics,CinCECGTorso,UWaveGestureLibraryZ,UWaveGestureLibraryX,UWaveGestureLibraryY,ScreenType,RefrigerationDevices,Mallat,ElectricDevices,InlineSkate,ShapesAll",
 	};
 
+
+
 	public static final String[] dev_args = new String[]{
 			"-dev=default",  // must be the first arg
 			"-data=E:/data/",
@@ -93,7 +95,7 @@ public class TSChiefApp {
 			"-overwriteResults=true",
 
 			// output
-			"-out=out/thesis/dev/k100e5b100r100",
+			"-out=out/post-doc/tmp/",
 
 			//multivariate
 //			"-archive=Multivariate2018_ts",
@@ -101,7 +103,7 @@ public class TSChiefApp {
 
 			//univariate
 			"-archive=Univariate2018_ts",
-			"-datasets=DistalPhalanxOutlineCorrect", // DistalPhalanxTW,ItalyPowerDemand,DistalPhalanxOutlineAgeGroup
+			"-datasets=ItalyPowerDemand", // DistalPhalanxTW,ItalyPowerDemand,DistalPhalanxOutlineAgeGroup
 //			"-datasets=TwoLeadECG,SonyAIBORobotSurface1,SonyAIBORobotSurface2,MoteStrain,ECGFiveDays,Coffee,GunPoint,CBF,ItalyPowerDemand", // DistalPhalanxTW,ItalyPowerDemand,DistalPhalanxOutlineAgeGroup
 //			"-datasets=TwoLeadECG,SonyAIBORobotSurface1,SonyAIBORobotSurface2,MoteStrain,ECGFiveDays,Coffee,GunPoint,CBF,ItalyPowerDemand,FaceFour,ECG200,ArrowHead,BirdChicken,BeetleFly,DiatomSizeReduction,ToeSegmentation2,Wine,ToeSegmentation1,Plane,ShapeletSim,SyntheticControl,OliveOil,Beef,Meat,Trace,Symbols,DistalPhalanxTW,MiddlePhalanxOutlineAgeGroup,ProximalPhalanxOutlineAgeGroup,DistalPhalanxOutlineAgeGroup,ProximalPhalanxTW,MiddlePhalanxTW,Lightning7,Herring,Car,MedicalImages,MiddlePhalanxOutlineCorrect,DistalPhalanxOutlineCorrect,ProximalPhalanxOutlineCorrect,Ham,Lightning2,FacesUCR,SwedishLeaf,ECG5000,Fish,Wafer,OSULeaf,TwoPatterns,Adiac,FaceAll,InsectWingbeatSound,Strawberry",
 //			"-datasets=TwoLeadECG,SonyAIBORobotSurface1,SonyAIBORobotSurface2,MoteStrain,ECGFiveDays,Coffee,GunPoint,CBF,ItalyPowerDemand,FaceFour,ECG200,ArrowHead,BirdChicken,BeetleFly,DiatomSizeReduction,ToeSegmentation2,Wine,ToeSegmentation1,Plane,ShapeletSim,SyntheticControl,OliveOil,Beef,Meat,Trace,Symbols,DistalPhalanxTW,MiddlePhalanxOutlineAgeGroup,ProximalPhalanxOutlineAgeGroup,DistalPhalanxOutlineAgeGroup,ProximalPhalanxTW,MiddlePhalanxTW,Lightning7,Herring,Car,MedicalImages,MiddlePhalanxOutlineCorrect,DistalPhalanxOutlineCorrect,ProximalPhalanxOutlineCorrect,Ham,Lightning2,FacesUCR,SwedishLeaf,ECG5000,Fish,Wafer,OSULeaf,TwoPatterns,Adiac,FaceAll,InsectWingbeatSound,Strawberry,ChlorineConcentration,WordSynonyms,Yoga,PhalangesOutlinesCorrect,CricketY,CricketX,CricketZ,Computers,Earthquakes,Worms,WormsTwoClass,FiftyWords,SmallKitchenAppliances,LargeKitchenAppliances,Haptics,CinCECGTorso,UWaveGestureLibraryZ,UWaveGestureLibraryX,UWaveGestureLibraryY,ScreenType,RefrigerationDevices,Mallat,ElectricDevices,InlineSkate,ShapesAll",
@@ -112,12 +114,12 @@ public class TSChiefApp {
 			// splits
 			"-candidateSelectionMethod=constant", //{constant,constbyDepthAndNodeSize,differentAtRoot,prob}
 			"-cRoot=e:1,b:1,r:1",
-//			"-c=ee:5",
+			"-c=ee:5",
 //			"-c=boss2:100",
 //			"-c=ee:5,boss2:100",
 //			"-c=ee:5,boss2:10,rise2:10",
 //			"-c=rise2:100",
-			"-c=ee:5,boss2:100,rise2:100",
+//			"-c=ee:5,boss2:100,rise2:100",
 
 			// topk
 			"-useBestPoolOfSplittersForRoots=false", //false,true
@@ -125,7 +127,7 @@ public class TSChiefApp {
 			"-splitterPoolSize=1", // percentage of max pool size, based on numTrees * TotalNumSplitters
 
 			// approx gini -- TODO fix sampling, percent to train
-			"-useApproxGini=true",
+			"-useApproxGini=false",
 			"-approxGiniSampling=stratifiedEnsuringAllClasses",
 			"-percentToTrain=1",
 			"-minNodeSizeForApproxGini=100",
@@ -294,9 +296,9 @@ public class TSChiefApp {
 						"\n*****THIS DEFAULTS TO RUN IN THE DEVELOPMENT MODE with compiled args in the jar file****"
 						);
 
-//				args = dev_args;
+				args = dev_args;
 //				args = ThesisExperimentConfigs.config_pf;
-				args = univariate_dev_args;
+//				args = univariate_dev_args;
 //				args = chapter6_mpf;
 
 			}else if (args.length > 2 && args[1].startsWith("-dev=")){

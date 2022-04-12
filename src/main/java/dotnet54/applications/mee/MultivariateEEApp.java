@@ -74,11 +74,11 @@ public class MultivariateEEApp {
             "").trim().split(" ");
 
     public static String[] tempArgs = ("-data=E:/data/ -a=Multivariate2018_ts -vb=1 -threads=0 -seed=6463564 -useTLRandom=false" +
-            " -o=E:/git/experiments/knn/10-2-2022/m3/i1d2-norm/train/ -fileOutput=overwrite -exportTrainQueryFile=true -exportTestQueryFile=true -saveTransformedDatasets=false" +
-            " -runTesting=true -testDir=E:/git/experiments/knn/10-2-2022/m3/i1d2-norm/test/ -testParamFileSuffixes=i,d,id,b -generateBestParamFiles=false -python=venv/Scripts/python" +
-            " -runLOOCV=false -norm=false -fold=0 -dep=false,true -dims=AllDims -lpIndep=1 -lpDep=2 -adjustSquaredDiff=true -useSquaredDiff=true" +
+            " -o=E:/git/experiments/knn/10-2-2022/m3/i1d2-norm/temp/subset/dim5 -fileOutput=overwrite -exportTrainQueryFile=true -exportTestQueryFile=true -saveTransformedDatasets=false" +
+            " -runTesting=true -testDir=E:/git/experiments/knn/10-2-2022/m3/i1d2-norm/temp/subset/dim5/i1d2-norm/test/ -testParamFileSuffixes=i,d,id,b -generateBestParamFiles=false -python=venv/Scripts/python" +
+            " -runLOOCV=false -norm=false -fold=0 -dep=false,true -dims={5} -lpIndep=1 -lpDep=2 -adjustSquaredDiff=true -useSquaredDiff=true" +
 //            " -d=ERing,BasicMotions,Libras,RacketSports,AtrialFibrillation,NATOPS,Handwriting,Epilepsy,UWaveGestureLibrary,FingerMovements,ArticularyWordRecognition,HandMovementDirection,StandWalkJump,Cricket" +
-            " -d=ERing" +
+            " -d=BasicMotions" +
             " -m=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,msm,erp,twe" +
             " -params=range:0,100,1" +
             "").trim().split(" ");
