@@ -59,7 +59,7 @@ The ``.csv`` files in this folder contain one row for each of the 30 folds, and 
 
 The results of all experiments can be found in the folder ``data``. Particularly, aggregated results are in
  ``summary`` folder, while full raw data is available in folder ``raw``.
-We also provide the scripts to post process data in the ``scripts`` folder
+We also provide the scripts to post process data in the ``experiments/papers/multivariate_measures`` folder
 
 
 ## Using the application

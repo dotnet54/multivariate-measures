@@ -58,5 +58,9 @@
 /docs/jar_archive/
 /data/ucr_multivariate_indices/
 /data/ucr_univariate_indices/
-/data/
 /experiments/
+/data/old/
+/data/raw/i1d2-norm/fold0_old
+/data/raw/i1d2-norm/test/combined-train.all.csv
+/data/raw/i1d2+norm/train
+/data/raw/i1d2-norm/train
