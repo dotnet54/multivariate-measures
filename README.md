@@ -26,11 +26,7 @@ competitive to other  state-of-the-art single-strategy multivariate time series 
 
 ## Source Code
 
-Since this close is closely related to the TS-CHIEF project (https://github.com/dotnet54/TS-CHIEF), some utility functions from the project are
-used in Multivariate Elastic Ensemble. This includes code to read ARFF, CSV or TS files, supporting math and
-statistical functions, and so on. 
-
-This project was developed using IntelliJ IDE and uses Maven to manage its dependencies. 
+This project was developed using IntelliJ IDE and uses Maven to manage its dependencies.
 You can import the project to IntelliJ, and it will automatically set up the project and import dependencies using the
 ``pom.xml`` file.
 
@@ -40,12 +36,16 @@ Source code for the multivariate similarity measures are present in the folder
 
 ``src/main/java/dotnet54/measures/multivariate``
 
-
 ### Multivariate Elastic Ensemble (MEE)
 
 The main entry point for Multivariate Elastic Ensemble is the class ``MultivariateEEApp`` in the folder
 
 ``src/main/java/dotnet54/measures/multivariate``
+
+Since this close is closely related to the TS-CHIEF project (https://github.com/dotnet54/TS-CHIEF), some utility functions from the project are
+used in Multivariate Elastic Ensemble. This includes code to read ARFF, CSV or TS files, supporting math and
+statistical functions, and so on.
+
 
 ### Datasets
 
