@@ -1,0 +1,35 @@
+\begin{table}
+\centering
+\caption{Accuracy of our ensemble $MEE$ compared against top multivariate TSC algorithms on 23 datasets from UEA Multivariate TS Archive.                   Column names are shortened as follows: IT for InceptionTime, RT for ROCKET, HC2 for HIVE-COTEv2.                   Wins indicate the number of time each classifier achieved the highest accuracy for each dataset.}
+\label{tbl:acc-ee}
+\begin{tabular}{p{0.6cm}*{16}{p{0.45cm}}}
+\toprule
+dataset &     $MEE_{I}$ &     $MEE_{D}$ &    $MEE_{ID}$ &         $MEE$ &         DrCIF &           TDE &            IT &           STC &            RT &           HC2 \\
+\midrule
+    AWR &          0.99 &          0.99 &          0.99 &          0.99 &          0.98 &          0.98 &          0.99 &          0.98 &          1.00 & \textbf{1.00} \\
+     AF &          0.27 & \textbf{0.35} &          0.32 &          0.31 &          0.23 &          0.30 &          0.22 &          0.32 &          0.25 &          0.28 \\
+     BM & \textbf{1.00} &          0.91 &          0.97 & \textbf{1.00} & \textbf{1.00} &          0.99 & \textbf{1.00} &          0.98 &          0.99 &          0.99 \\
+     CR &          1.00 & \textbf{1.00} & \textbf{1.00} & \textbf{1.00} &          0.99 &          0.99 &          0.99 &          0.99 & \textbf{1.00} &          1.00 \\
+    DDG &          0.58 &          0.47 &          0.58 &          0.60 &          0.58 &          0.32 & \textbf{0.63} &          0.43 &          0.46 &          0.50 \\
+     EP &          0.98 &          0.96 &          0.97 &          0.98 &          0.99 &          1.00 &          0.99 &          0.99 &          0.99 & \textbf{1.00} \\
+     EC &          0.30 &          0.31 &          0.30 &          0.31 &          0.67 &          0.53 &          0.28 & \textbf{0.82} &          0.45 &          0.79 \\
+     ER &          0.97 &          0.95 &          0.97 &          0.96 &          0.98 &          0.94 &          0.92 &          0.84 &          0.98 & \textbf{0.99} \\
+     FM & \textbf{0.57} &          0.54 &          0.56 &          0.56 &          0.56 &          0.54 &          0.56 &          0.53 &          0.55 &          0.55 \\
+    HMD &          0.34 &          0.29 &          0.34 &          0.34 & \textbf{0.46} &          0.38 &          0.42 &          0.35 &          0.45 &          0.40 \\
+     HW &          0.49 &          0.60 &          0.58 &          0.60 &          0.34 &          0.56 & \textbf{0.66} &          0.29 &          0.57 &          0.56 \\
+     HB &          0.73 &          0.72 &          0.73 &          0.72 & \textbf{0.76} &          0.72 &          0.73 &          0.72 &          0.72 &          0.73 \\
+    LIB &          0.88 &          0.89 &          0.89 &          0.89 &          0.91 &          0.88 &          0.89 &          0.84 &          0.91 & \textbf{0.93} \\
+   LSST &          0.58 &          0.55 &          0.59 &          0.58 &          0.55 &          0.56 &          0.34 &          0.58 &          0.63 & \textbf{0.64} \\
+   NATO &          0.79 &          0.83 &          0.81 &          0.81 &          0.84 &          0.82 & \textbf{0.97} &          0.84 &          0.89 &          0.89 \\
+     PD &          0.99 &          0.99 &          0.99 &          0.99 &          0.99 &          0.97 & \textbf{1.00} &          0.98 &          1.00 &          1.00 \\
+   PEMS &          0.82 &          0.78 &          0.81 &          0.82 &          1.00 & \textbf{1.00} &          0.83 &          0.98 &          0.86 &          1.00 \\
+     PS &          0.19 &          0.19 &          0.19 &          0.19 &          0.31 &          0.23 & \textbf{0.37} &          0.31 &          0.28 &          0.29 \\
+     RS &          0.87 &          0.87 &          0.88 &          0.87 &          0.90 &          0.89 &          0.92 &          0.88 &          0.93 & \textbf{0.93} \\
+   SRS1 &          0.83 &          0.82 &          0.83 &          0.83 &          0.87 &          0.83 &          0.85 &          0.85 &          0.87 & \textbf{0.88} \\
+   SRS2 &          0.51 &          0.51 &          0.52 &          0.51 &          0.51 & \textbf{0.53} &          0.52 &          0.52 &          0.51 &          0.50 \\
+    SWJ &          0.35 &          0.30 &          0.31 &          0.33 &          0.41 &          0.36 &          0.42 &          0.44 & \textbf{0.46} &          0.44 \\
+     UW &          0.92 &          0.93 &          0.93 &          0.93 &          0.92 &          0.93 &          0.91 &          0.87 &          0.94 & \textbf{0.95} \\
+   wins &             2 &             2 &             1 &             2 &             3 &             2 &             6 &             1 &             2 &             8 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,162 @@
+,dataset_name,classifier_name,accuracy
+0,ArticularyWordRecognition,ROCKET,0.9956
+1,AtrialFibrillation,ROCKET,0.2489
+2,BasicMotions,ROCKET,0.99
+3,Cricket,ROCKET,1.0
+4,DuckDuckGeese,ROCKET,0.4613
+5,Epilepsy,ROCKET,0.9908
+6,EthanolConcentration,ROCKET,0.4468
+7,ERing,ROCKET,0.9805
+8,FingerMovements,ROCKET,0.5527
+9,HandMovementDirection,ROCKET,0.4459
+10,Handwriting,ROCKET,0.5667
+11,Heartbeat,ROCKET,0.7176
+12,Libras,ROCKET,0.9061
+13,LSST,ROCKET,0.6315
+14,NATOPS,ROCKET,0.8854
+15,PenDigits,ROCKET,0.9956
+16,PEMS-SF,ROCKET,0.8563
+17,PhonemeSpectra,ROCKET,0.2835
+18,RacketSports,ROCKET,0.9279
+19,SelfRegulationSCP1,ROCKET,0.8655
+20,SelfRegulationSCP2,ROCKET,0.5135
+21,StandWalkJump,ROCKET,0.4556
+22,UWaveGestureLibrary,ROCKET,0.9443
+23,ArticularyWordRecognition,STC,0.9751
+24,AtrialFibrillation,STC,0.3178
+25,BasicMotions,STC,0.9792
+26,Cricket,STC,0.9894
+27,DuckDuckGeese,STC,0.4347
+28,Epilepsy,STC,0.9874
+29,EthanolConcentration,STC,0.8236
+30,ERing,STC,0.8428
+31,FingerMovements,STC,0.534
+32,HandMovementDirection,STC,0.3495
+33,Handwriting,STC,0.2877
+34,Heartbeat,STC,0.7215
+35,Libras,STC,0.8446
+36,LSST,STC,0.5782
+37,NATOPS,STC,0.8435
+38,PenDigits,STC,0.977
+39,PEMS-SF,STC,0.984
+40,PhonemeSpectra,STC,0.3062
+41,RacketSports,STC,0.8809
+42,SelfRegulationSCP1,STC,0.8473
+43,SelfRegulationSCP2,STC,0.5163
+44,StandWalkJump,STC,0.44
+45,UWaveGestureLibrary,STC,0.8703
+46,ArticularyWordRecognition,InceptionTime,0.991
+47,AtrialFibrillation,InceptionTime,0.22
+48,BasicMotions,InceptionTime,1.0
+49,Cricket,InceptionTime,0.9944
+50,DuckDuckGeese,InceptionTime,0.6347
+51,Epilepsy,InceptionTime,0.9865
+52,EthanolConcentration,InceptionTime,0.2792
+53,ERing,InceptionTime,0.921
+54,FingerMovements,InceptionTime,0.5613
+55,HandMovementDirection,InceptionTime,0.4239
+56,Handwriting,InceptionTime,0.6574
+57,Heartbeat,InceptionTime,0.732
+58,Libras,InceptionTime,0.8872
+59,LSST,InceptionTime,0.3397
+60,NATOPS,InceptionTime,0.9663
+61,PenDigits,InceptionTime,0.9968
+62,PEMS-SF,InceptionTime,0.8283
+63,PhonemeSpectra,InceptionTime,0.3674
+64,RacketSports,InceptionTime,0.9169
+65,SelfRegulationSCP1,InceptionTime,0.8469
+66,SelfRegulationSCP2,InceptionTime,0.5204
+67,StandWalkJump,InceptionTime,0.42
+68,UWaveGestureLibrary,InceptionTime,0.9123
+69,ArticularyWordRecognition,HIVE-COTE 2.0,0.995777778
+70,AtrialFibrillation,HIVE-COTE 2.0,0.282222222
+71,BasicMotions,HIVE-COTE 2.0,0.989166667
+72,Cricket,HIVE-COTE 2.0,0.999537037
+73,DuckDuckGeese,HIVE-COTE 2.0,0.498666667
+74,Epilepsy,HIVE-COTE 2.0,0.998309179
+75,EthanolConcentration,HIVE-COTE 2.0,0.790874525
+76,ERing,HIVE-COTE 2.0,0.985061728
+77,FingerMovements,HIVE-COTE 2.0,0.552333333
+78,HandMovementDirection,HIVE-COTE 2.0,0.397747748
+79,Handwriting,HIVE-COTE 2.0,0.563411765
+80,Heartbeat,HIVE-COTE 2.0,0.728617886
+81,Libras,HIVE-COTE 2.0,0.926851852
+82,LSST,HIVE-COTE 2.0,0.636955934
+83,NATOPS,HIVE-COTE 2.0,0.892037037
+84,PenDigits,HIVE-COTE 2.0,0.995568897
+85,PEMS-SF,HIVE-COTE 2.0,0.998073218
+86,PhonemeSpectra,HIVE-COTE 2.0,0.294273785
+87,RacketSports,HIVE-COTE 2.0,0.930482456
+88,SelfRegulationSCP1,HIVE-COTE 2.0,0.878725825
+89,SelfRegulationSCP2,HIVE-COTE 2.0,0.50462963
+90,StandWalkJump,HIVE-COTE 2.0,0.437777778
+91,UWaveGestureLibrary,HIVE-COTE 2.0,0.948854167
+92,ArticularyWordRecognition,DrCIF,0.978777778
+93,AtrialFibrillation,DrCIF,0.233333333
+94,BasicMotions,DrCIF,1.0
+95,Cricket,DrCIF,0.992592593
+96,DuckDuckGeese,DrCIF,0.576
+97,Epilepsy,DrCIF,0.987439614
+98,EthanolConcentration,DrCIF,0.67148289
+99,ERing,DrCIF,0.978148148
+100,FingerMovements,DrCIF,0.556666667
+101,HandMovementDirection,DrCIF,0.463063063
+102,Handwriting,DrCIF,0.344431373
+103,Heartbeat,DrCIF,0.764390244
+104,Libras,DrCIF,0.911111111
+105,LSST,DrCIF,0.553473912
+106,NATOPS,DrCIF,0.844814815
+107,PenDigits,DrCIF,0.994215742
+108,PEMS-SF,DrCIF,0.997495183
+109,PhonemeSpectra,DrCIF,0.306481758
+110,RacketSports,DrCIF,0.898026316
+111,SelfRegulationSCP1,DrCIF,0.869624573
+112,SelfRegulationSCP2,DrCIF,0.507777778
+113,StandWalkJump,DrCIF,0.408888889
+114,UWaveGestureLibrary,DrCIF,0.922604167
+115,ArticularyWordRecognition,TDE,0.977333333
+116,AtrialFibrillation,TDE,0.302222222
+117,BasicMotions,TDE,0.991666667
+118,Cricket,TDE,0.993055556
+119,DuckDuckGeese,TDE,0.322
+120,Epilepsy,TDE,0.996859903
+121,EthanolConcentration,TDE,0.526108999
+122,ERing,TDE,0.938888889
+123,FingerMovements,TDE,0.538333333
+124,HandMovementDirection,TDE,0.376576577
+125,Handwriting,TDE,0.558509804
+126,Heartbeat,TDE,0.722276423
+127,Libras,TDE,0.876481481
+128,LSST,TDE,0.562625034
+129,NATOPS,TDE,0.816111111
+130,PenDigits,TDE,0.971602821
+131,PEMS-SF,TDE,0.998458574
+132,PhonemeSpectra,TDE,0.232557908
+133,RacketSports,TDE,0.890570175
+134,SelfRegulationSCP1,TDE,0.834812287
+135,SelfRegulationSCP2,TDE,0.527222222
+136,StandWalkJump,TDE,0.362222222
+137,UWaveGestureLibrary,TDE,0.9271875
+138,ArticularyWordRecognition,$MEE$,0.9883333333333332
+139,AtrialFibrillation,$MEE$,0.3133333333333333
+140,BasicMotions,$MEE$,1.0
+141,Cricket,$MEE$,1.0
+142,DuckDuckGeese,$MEE$,0.596
+143,Epilepsy,$MEE$,0.9804347826086957
+144,EthanolConcentration,$MEE$,0.3068441064638783
+145,ERing,$MEE$,0.9644444444444444
+146,FingerMovements,$MEE$,0.562
+147,HandMovementDirection,$MEE$,0.3351351351351351
+148,Handwriting,$MEE$,0.6004705882352941
+149,Heartbeat,$MEE$,0.724390243902439
+150,Libras,$MEE$,0.8927777777777777
+151,LSST,$MEE$,0.5841443633414436
+152,NATOPS,$MEE$,0.8133333333333332
+153,PenDigits,$MEE$,0.9929102344196684
+154,PEMS-SF,$MEE$,0.8208092485549132
+155,PhonemeSpectra,$MEE$,0.1926036385326573
+156,RacketSports,$MEE$,0.8736842105263157
+157,SelfRegulationSCP1,$MEE$,0.8279863481228669
+158,SelfRegulationSCP2,$MEE$,0.5138888888888888
+159,StandWalkJump,$MEE$,0.3266666666666666
+160,UWaveGestureLibrary,$MEE$,0.928125
