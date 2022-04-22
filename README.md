@@ -64,6 +64,13 @@ We also provide the scripts to post process data in the ``scripts`` folder
 
 ## Using the application
 
+### Building a Jar File
+
+If using IntelliJ IDE you can create the jar file in two ways. Either by using IDE build system or maven.
+If using the IDE build system then create an artifact from ``File >> Project Structure >> Project Settings >> Artifacts``.
+Then use menu ``Build >> Build Artifacts``.
+If using maven, open maven window using ``View >> Tool Windows >> Maven``, then click life cycle goal ``package``.
+
 ### Command Line Options
 
 We provide a very comprehensive command line arguments for the application implemented in ``MultivariateEEApp``.
@@ -71,42 +78,111 @@ It is implemented using JCommander in the class ``MultivariateEEArgs``.
 On the terminal ``-help`` will print all available commands, or you can go through ``MultivariateEEArgs`` class
 to easily figure out more details on how to use it.
 
-### Training MEE
-Here is a a sample command line argument to train a sample dataset
+There is a lot of command line options just added for my own use during experiments. End users don't need to set all
+of them, just use the defaults.
+
+Here's a list of helpful command lines
 ```
-java -Xmx32g -cp ""mEE-v1.0.jar:lib/*"
-application.papers.MultivariateEEApp
--seed=6463564 -threads=0 -fileOutput=overwrite 
--exportTrainQueryFile=true -exportTestQueryFile=true 
--saveTransformedDatasets=false 
--testParamFileSuffixes=i,d,id -generateBestParamFiles=false 
--runLOOCV=true -runTesting=false 
--dep=false,true -dims=AllDims 
--lpIndep=1 -lpDep=2 -norm=false 
--o=out/i1d2-norm/train/ 
--testDir=out/i1d2-norm/test/ 
--data=E:/data/ -archive=Multivariate2018_ts 
--params=range:0,100,1 
+-seed = 0 // sets the random seed
+-threads=0 // sets the number of CPU threads to use, 0 means use all available CPUs
+-norm=false // z-normalize datasets per series per dimension
+
+// If using UCR datasets
+
+-data=E:/data/ // folder to datasets
+-archive=Multivariate2018_ts // sub folder with archive name
+-datasets=BasicMotions,LSST,RocketTree // list of datasets
+
+// Else
+
+-train=full train file with extension
+-test=full test file with extension
+
+
+// What action to do, either train or test or set both to true -- explained under Training MEE
+
+-runLOOCV=true
+-runTesting=false 
+  
+// Which measures to use
+
 -measures=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe 
--datasets=BasicMotions,LSST,RocketTree
+
+// Dependency to use
+// if false is in the list, then independent measures are trained
+// if true is in the list, then dependent measures are trained
+// by default both false and true is provided in the list
+
+-dep=false,true
+ 
+// Parameter ranges to search -- use this default, if doing something else refer to 
+// parseParams function in MultivariateEEArgs class
+
+-params=range:0,100,1 
+
+// Default training params
+// use all dimensions, can give a subset of dimensions 
+// refer to parseDimenstionsToUse function in class MultivariateEEArgs
+
+-dims=AllDims  
+
+// p-norms used for independent and depenedent measures -- refer to the paper
+-lpIndep=1 
+-lpDep=2
+
+
+// Output files
+
+-o=out/train/ // output folder, a relative or absolute path
+-fileOutput=overwrite // true by default, this will overwrite result files
+-exportTrainQueryFile=true // true by default, exports a csv file with prediction of each training sample per row
+-exportTestQueryFile=true  // true by default, exports a csv file with prediction of each test sample per row
+
+
+// Only used during for test time -- explained under Testing MEE
+-testDir=out/test/ 
+-testParamFileSuffixes=i,d,id
+-generateBestParamFiles=false 
+
+
 ```
 
-I am using ``-cp`` flag for JVM and then providing main class name as ``"mEE-v1.0.jar:lib/*"
+
+### Training MEE
+Here's a sample command line argument to train the three sample datasets provided in the folder ``data/samples``
+```
+java -Xmx16g -cp "MEE-v1.0.jar:lib/*"
+application.papers.MultivariateEEApp
+-seed=6463564 -threads=0
+-norm=false 
+-data=data/samples/ -archive=multivariate
+-datasets=BasicMotions,ERing,RacketSports
+-runLOOCV=true -runTesting=false 
+-o=out/train/ 
+-testDir=out/test/ 
+-measures=euc,dtwf,dtwr,ddtwf,ddtwr,wdtw,wddtw,lcss,erp,msm,twe 
+```
+
+-Xmx16g is a Java Virtual Machine flag that sets virtual memory limit. In this example its set to 16 GB.
+-cp command gives the path to the jar file. and lib/* gives path to lib file. 
+I have compiled lib files as external files to reduce jar file size when uploading to computing servers. 
+You can configure the IDE to include lib files in the jar file if you wish.
+On a Linux machine, you may need to replace the ``:`` with ``;``.
+
+
+I am using ``-cp`` flag for JVM and then providing main class name as ``"MEE-v1.0.jar:lib/*"
 applications.mee.MultivariateEE`` in the command line because ``pom.xml`` file in the
 project is configured to package the main file for TS-CHIEF by default.
 
-There is a lot of cmd options defined in the file ``MultivarKNNArgs``.
-However, end users would not need to use most of them, as they are added
-only to help with my own experimentation.
 
 ### Testing MEE
 
 I did not write code in a way to sequentially perform training and testing in one run.
-This is because I ran leave-one-out-cross validation to find the best parameter for each
+This is because I ran leave-one-out cross-validation (LOOCV) to find the best parameter for each
 measure, and to speed up, I ran LOOCV on nodes of a cluster.
 
 So once training phase is run, it will output temporary csv files (e.g. to the folder
-``-o=out/i1d2-norm/train/``)
+``-o=out/train/``)
 which contain training results for each dataset, each measure and each parameter and
 each dependency method (independent or dependent).
 
@@ -125,13 +201,14 @@ To
 ``-runLOOCV=false -runTesting=true ``
 
 Then set the wording directory for testing using ``-testDir``, e.g.
-``-testDir=out/i1d2-norm/test/.``
+``-testDir=out/test/.``
 This is the directory to which the python script outputted the final LOOCV results
 
-The post-processing python scripts are in the file ``applications.mee.mee-test.py``
+The post-processing python scripts are in the file ``src/python/mee/multivariate_ee.py``.
+Other useful scripts are in the folder ``experiments/papers/multivariate_measures``
 
 If anyone does not want to redo the LOOCV, I have provided the best param files in the
-folder ``TODO``.
+folder ``data/results``.
 
 
 
