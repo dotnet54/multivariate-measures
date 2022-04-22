@@ -52,6 +52,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\data\papers\ts-chief\ucr.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\data\results\e5b100r100t1000k100.repeats.all.csv">
           <value>
             <Attribute>
@@ -66,7 +73,28 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\data\results\e5b100r100t1000k500.time.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\data\results\results_rocket_multivariate.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\data\ucr2015.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\data\ucr2015arff_names.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -95,20 +123,6 @@
           </value>
         </entry>
         <entry key="\data\uts2018min.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\out\dev\ItalyPowerDemand\ItalyPowerDemand.forest.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\out\dev\ItalyPowerDemand\ItalyPowerDemand.tree.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

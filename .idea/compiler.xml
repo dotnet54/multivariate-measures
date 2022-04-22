@@ -11,9 +11,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="TS-CHIEF-DEV" />
+        <module name="multivariate-measures" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="multivariate-measures" target="11" />
       <module name="TS-CHIEF-DEV" target="11" />
     </bytecodeTargetLevel>
   </component>
