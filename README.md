@@ -57,9 +57,8 @@ The ``.csv`` files in this folder contain one row for each of the 30 folds, and 
 
 ### Results
 
-The results of all experiments can be found in the folder ``data``. Particularly, aggregated results are in
- ``summary`` folder, while full raw data is available in folder ``raw``.
-We also provide the scripts to post process data in the ``experiments/papers/multivariate_measures`` folder
+The results of all experiments can be found in the folder ``data/raw``.
+We also provide the scripts to post process data in the folder ``experiments/papers/multivariate_measures``.
 
 
 ## Using the application
@@ -207,8 +206,8 @@ This is the directory to which the python script outputted the final LOOCV resul
 The post-processing python scripts are in the file ``src/python/mee/multivariate_ee.py``.
 Other useful scripts are in the folder ``experiments/papers/multivariate_measures``
 
-If anyone does not want to redo the LOOCV, I have provided the best param files in the
-folder ``data/results``.
+If you dont want to redo the LOOCV, I have provided the best param files in the
+folder ``data/raw``.
 
 
 
