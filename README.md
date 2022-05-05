@@ -1,10 +1,10 @@
 # Multivariate Similarity Measures for Time Series Classification
 
 This repository contains the source code of the following paper.
-Please cite the paper if using the source code in this repository.
+Please cite the paper if you use the source code in this repository.
 
 ```
-This paper is currently review, for now please cite the ArXiv link bellow
+This paper is currently under review, for now please cite the ArXiv link bellow
 
 https://arxiv.org/pdf/2102.10231.pdf
 ```
@@ -27,7 +27,7 @@ competitive to other  state-of-the-art single-strategy multivariate time series 
 ## Source Code
 
 This project was developed using IntelliJ IDE and uses Maven to manage its dependencies.
-You can import the project to IntelliJ, and it will automatically set up the project and import dependencies using the
+You can import the project to IntelliJ, and it will automatically set up the project. Dependencies are specified in the
 ``pom.xml`` file.
 
 ### Multivariate Similarity Measures
@@ -42,9 +42,14 @@ The main entry point for Multivariate Elastic Ensemble is the class ``Multivaria
 
 ``src/main/java/dotnet54/measures/multivariate``
 
-Since this close is closely related to the TS-CHIEF project (https://github.com/dotnet54/TS-CHIEF), some utility functions from the project are
-used in Multivariate Elastic Ensemble. This includes code to read ARFF, CSV or TS files, supporting math and
-statistical functions, and so on.
+Since this close is closely related to the TS-CHIEF project (https://github.com/dotnet54/TS-CHIEF), some utility functions 
+from the TS-CHIEF project are also used in Multivariate Elastic Ensemble. This includes code to read CSV, TS or ARFF files, 
+internal data structures such as Dataset, TimeSeries class,
+utility functions related to statistics and math, and so on. 
+This is why you will find extra packages from TS-CHIEF project in this repository. 
+In the future, the source code may be refactored further to reduce these dependencies. 
+However, some dependencies will probably remain for long term as it makes no sense to reimplement 
+two TimeSeries or Dataset classes for two projects.
 
 
 ### Datasets
@@ -52,14 +57,24 @@ statistical functions, and so on.
 UCR/UEA datasets used in these experiments can be obtained from http://timeseriesclassification.com/dataset.
 It is recommended to download the files in ``.ts`` file format. However, ``.csv`` files are also supported.
 
-We have uploaded the index files for our resample expriments to the folder ``cache/Multivariate2018_ts_INDICES``.
+We have uploaded the index files for our resample experiments to the folder ``cache/Multivariate2018_ts_INDICES``.
 The ``.csv`` files in this folder contain one row for each of the 30 folds, and columns contains the list of indices in the fold
 
 ### Results
 
 The results of all experiments can be found in the folder ``data/raw``.
 We also provide the scripts to post process data in the folder ``experiments/papers/multivariate_measures``.
+Specifically, the Jupyter notebook file ``mv_results.ipynb`` contains all the functions to post-process the results.
+Refer to the to Section [Testing MEE](#testing-mee) and the information in the Notebook file for more details.
 
+Also note that
+``data/raw/i1d2+norm/test/`` contains full test results of one fold of UCR data with z-normalization
+``data/raw/i1d2-norm/test/`` contains full test results of ten folds of UCR data without z-normalization 
+(as it is on archive, just note that four datasets were already normalized in the repository -- refer to the paper.)
+The final results in the paper uses the evrage of ten folds from ``i1d2-norm`` directory.
+To reduce upload sizes, I have zipped the CSV files for each fold. 
+If rerunning the all experiments, make sure to unzip these files and set correct path before running 
+the functions in ``mv_results.ipynb``.
 
 ## Using the application
 
@@ -147,7 +162,7 @@ Here's a list of helpful command lines
 ```
 
 
-### Training MEE
+###Training MEE
 Here's a sample command line argument to train the three sample datasets provided in the folder ``data/samples``
 ```
 java -Xmx16g -cp "MEE-v1.0.jar:lib/*"
@@ -174,7 +189,7 @@ applications.mee.MultivariateEE`` in the command line because ``pom.xml`` file i
 project is configured to package the main file for TS-CHIEF by default.
 
 
-### Testing MEE
+###Testing MEE
 
 I did not write code in a way to sequentially perform training and testing in one run.
 This is because I ran leave-one-out cross-validation (LOOCV) to find the best parameter for each
@@ -204,7 +219,7 @@ Then set the wording directory for testing using ``-testDir``, e.g.
 This is the directory to which the python script outputted the final LOOCV results
 
 The post-processing python scripts are in the file ``src/python/mee/multivariate_ee.py``.
-Other useful scripts are in the folder ``experiments/papers/multivariate_measures``
+Other useful scripts are in the Jupyter Notebook ``experiments/papers/multivariate_measures/mv_results.ipynb``
 
 If you dont want to redo the LOOCV, I have provided the best param files in the
 folder ``data/raw``.
